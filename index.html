@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مرجع الكود — سلايدات تفاعلية</title>
+<title>اقرأ أي كود — مرجع HTML & CSS</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a5fd4'/%3E%3Ctext x='5' y='23' font-family='Georgia,serif' font-weight='900' font-size='20' fill='white'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Cairo:wght@400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cairo:wght@300;400;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   THEMES — كل سلايد ليه theme مختلف
-   بتغير اللون بس بتغير الـ --accent و --bg و --glow
+   CSS VARIABLES — بتغير اللون بس بتغير الـ theme
    ============================================================ */
 :root {
   --font-head: 'Playfair Display', serif;
@@ -18,102 +18,95 @@
   --transition: 0.65s cubic-bezier(0.77,0,0.18,1);
 }
 
-/* Themes — light mode */
 [data-theme="blue"] {
-  --accent: #1a5fd4;
-  --accent2: #3b7de8;
-  --bg-from: #eef4ff;
-  --bg-to: #dceaff;
-  --glow: rgba(26,95,212,0.12);
-  --surface: rgba(26,95,212,0.06);
-  --border: rgba(26,95,212,0.15);
-  --text: #1a2540;
-  --muted: #5570a0;
-  --tag-bg: rgba(26,95,212,0.08);
+  --accent: #1a5fd4; --accent2: #3b7de8;
+  --bg-from: #eef4ff; --bg-to: #dceaff;
+  --glow: rgba(26,95,212,0.15);
+  --surface: rgba(26,95,212,0.07);
+  --border: rgba(26,95,212,0.18);
+  --text: #1a2540; --muted: #5570a0;
+  --tag-bg: rgba(26,95,212,0.09);
 }
 [data-theme="green"] {
-  --accent: #0e8a5a;
-  --accent2: #16a870;
-  --bg-from: #edf8f3;
-  --bg-to: #d6f0e4;
-  --glow: rgba(14,138,90,0.1);
-  --surface: rgba(14,138,90,0.06);
-  --border: rgba(14,138,90,0.15);
-  --text: #0d2b1e;
-  --muted: #3a7a5c;
-  --tag-bg: rgba(14,138,90,0.08);
+  --accent: #0e8a5a; --accent2: #16a870;
+  --bg-from: #edf8f3; --bg-to: #d6f0e4;
+  --glow: rgba(14,138,90,0.12);
+  --surface: rgba(14,138,90,0.07);
+  --border: rgba(14,138,90,0.18);
+  --text: #0d2b1e; --muted: #3a7a5c;
+  --tag-bg: rgba(14,138,90,0.09);
 }
 [data-theme="rose"] {
-  --accent: #c4285c;
-  --accent2: #e0406e;
-  --bg-from: #fff0f4;
-  --bg-to: #ffdce8;
-  --glow: rgba(196,40,92,0.1);
-  --surface: rgba(196,40,92,0.05);
-  --border: rgba(196,40,92,0.15);
-  --text: #3a0e1e;
-  --muted: #8a4060;
-  --tag-bg: rgba(196,40,92,0.07);
+  --accent: #c4285c; --accent2: #e0406e;
+  --bg-from: #fff0f4; --bg-to: #ffdce8;
+  --glow: rgba(196,40,92,0.12);
+  --surface: rgba(196,40,92,0.06);
+  --border: rgba(196,40,92,0.18);
+  --text: #3a0e1e; --muted: #8a4060;
+  --tag-bg: rgba(196,40,92,0.08);
 }
 [data-theme="amber"] {
-  --accent: #b86a00;
-  --accent2: #d48010;
-  --bg-from: #fff8ee;
-  --bg-to: #ffecd0;
-  --glow: rgba(184,106,0,0.1);
-  --surface: rgba(184,106,0,0.06);
-  --border: rgba(184,106,0,0.15);
-  --text: #2e1800;
-  --muted: #805030;
-  --tag-bg: rgba(184,106,0,0.08);
+  --accent: #b86a00; --accent2: #d48010;
+  --bg-from: #fff8ee; --bg-to: #ffecd0;
+  --glow: rgba(184,106,0,0.12);
+  --surface: rgba(184,106,0,0.07);
+  --border: rgba(184,106,0,0.18);
+  --text: #2e1800; --muted: #805030;
+  --tag-bg: rgba(184,106,0,0.09);
 }
 [data-theme="teal"] {
-  --accent: #0a8a7a;
-  --accent2: #0fa898;
-  --bg-from: #edfaf8;
-  --bg-to: #d0f2ee;
-  --glow: rgba(10,138,122,0.1);
-  --surface: rgba(10,138,122,0.06);
-  --border: rgba(10,138,122,0.15);
-  --text: #062820;
-  --muted: #2a7068;
-  --tag-bg: rgba(10,138,122,0.08);
+  --accent: #0a8a7a; --accent2: #0fa898;
+  --bg-from: #edfaf8; --bg-to: #d0f2ee;
+  --glow: rgba(10,138,122,0.12);
+  --surface: rgba(10,138,122,0.07);
+  --border: rgba(10,138,122,0.18);
+  --text: #062820; --muted: #2a7068;
+  --tag-bg: rgba(10,138,122,0.09);
 }
 [data-theme="plum"] {
-  --accent: #6b34c8;
-  --accent2: #8450e0;
-  --bg-from: #f4f0ff;
-  --bg-to: #e6dcff;
-  --glow: rgba(107,52,200,0.1);
-  --surface: rgba(107,52,200,0.06);
-  --border: rgba(107,52,200,0.14);
-  --text: #1e0e40;
-  --muted: #6050a0;
-  --tag-bg: rgba(107,52,200,0.08);
+  --accent: #6b34c8; --accent2: #8450e0;
+  --bg-from: #f4f0ff; --bg-to: #e6dcff;
+  --glow: rgba(107,52,200,0.12);
+  --surface: rgba(107,52,200,0.07);
+  --border: rgba(107,52,200,0.17);
+  --text: #1e0e40; --muted: #6050a0;
+  --tag-bg: rgba(107,52,200,0.09);
 }
 [data-theme="stone"] {
-  --accent: #6b5e48;
-  --accent2: #857260;
-  --bg-from: #f8f5f0;
-  --bg-to: #ede8e0;
-  --glow: rgba(107,94,72,0.1);
-  --surface: rgba(107,94,72,0.06);
-  --border: rgba(107,94,72,0.14);
-  --text: #28201a;
-  --muted: #7a6e60;
-  --tag-bg: rgba(107,94,72,0.08);
+  --accent: #6b5e48; --accent2: #857260;
+  --bg-from: #f8f5f0; --bg-to: #ede8e0;
+  --glow: rgba(107,94,72,0.12);
+  --surface: rgba(107,94,72,0.07);
+  --border: rgba(107,94,72,0.17);
+  --text: #28201a; --muted: #7a6e60;
+  --tag-bg: rgba(107,94,72,0.09);
 }
 [data-theme="sand"] {
-  --accent: #a06820;
-  --accent2: #be8030;
-  --bg-from: #fdf6ec;
-  --bg-to: #f5e8d0;
-  --glow: rgba(160,104,32,0.1);
-  --surface: rgba(160,104,32,0.06);
-  --border: rgba(160,104,32,0.15);
-  --text: #2a1a06;
-  --muted: #7a5830;
-  --tag-bg: rgba(160,104,32,0.08);
+  --accent: #a06820; --accent2: #be8030;
+  --bg-from: #fdf6ec; --bg-to: #f5e8d0;
+  --glow: rgba(160,104,32,0.12);
+  --surface: rgba(160,104,32,0.07);
+  --border: rgba(160,104,32,0.18);
+  --text: #2a1a06; --muted: #7a5830;
+  --tag-bg: rgba(160,104,32,0.09);
+}
+[data-theme="indigo"] {
+  --accent: #3730a3; --accent2: #4f46e5;
+  --bg-from: #eef2ff; --bg-to: #dde4ff;
+  --glow: rgba(55,48,163,0.12);
+  --surface: rgba(55,48,163,0.07);
+  --border: rgba(55,48,163,0.17);
+  --text: #1e1b4b; --muted: #5b57a0;
+  --tag-bg: rgba(55,48,163,0.09);
+}
+[data-theme="cyan"] {
+  --accent: #0369a1; --accent2: #0284c7;
+  --bg-from: #ecfeff; --bg-to: #cffafe;
+  --glow: rgba(3,105,161,0.12);
+  --surface: rgba(3,105,161,0.07);
+  --border: rgba(3,105,161,0.17);
+  --text: #082f49; --muted: #2a6580;
+  --tag-bg: rgba(3,105,161,0.09);
 }
 
 /* ============================================================
@@ -127,211 +120,138 @@ body {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  cursor: default;
   user-select: none;
 }
 
 /* ============================================================
    PRESENTATION SHELL
    ============================================================ */
-.pres {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
+.pres { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
 
-/* Background radial gradient — shifts with theme */
 .pres-bg {
-  position: absolute;
-  inset: 0;
-  transition: background var(--transition);
-  z-index: 0;
+  position: absolute; inset: 0;
+  transition: background var(--transition); z-index: 0;
 }
-
-/* Grain overlay */
 .pres-bg::after {
   content: '';
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.12;
-  pointer-events: none;
+  opacity: 0.1; pointer-events: none;
 }
 
-/* Glow orb */
 .pres-orb {
   position: absolute;
-  width: 55vw;
-  height: 55vw;
+  width: 55vw; height: 55vw;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.4;
+  opacity: 0.35;
   pointer-events: none;
-  transition: background var(--transition), transform 1.2s ease;
+  transition: background var(--transition);
   z-index: 0;
-  top: -10%;
-  left: -5%;
+  top: -10%; left: -5%;
 }
 
 /* ============================================================
    SLIDES
    ============================================================ */
-.slides-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-}
+.slides-wrap { position: absolute; inset: 0; z-index: 10; }
 
 .slide {
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 80px;
-  opacity: 0;
-  pointer-events: none;
+  padding: 50px 70px 90px;
+  opacity: 0; pointer-events: none;
   transform: translateY(40px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   text-align: center;
 }
-
-.slide.active {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateY(0);
-}
-
-.slide.exit-up {
-  opacity: 0;
-  transform: translateY(-40px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
+.slide.active { opacity: 1; pointer-events: all; transform: translateY(0); }
+.slide.exit-up { opacity: 0; transform: translateY(-40px); transition: opacity 0.35s ease, transform 0.35s ease; }
 
 /* ============================================================
    TYPOGRAPHY
    ============================================================ */
 .slide-label {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 18px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 14px;
   opacity: 0;
-  animation: none;
 }
-
-.slide.active .slide-label {
-  animation: fadeUp 0.5s 0.05s forwards;
-}
+.slide.active .slide-label { animation: fadeUp 0.5s 0.05s forwards; }
 
 .slide-title {
   font-family: var(--font-head);
-  font-size: clamp(36px, 5.5vw, 72px);
-  font-weight: 900;
-  color: var(--text);
-  line-height: 1.1;
-  margin-bottom: 16px;
-  opacity: 0;
+  font-size: clamp(32px, 5vw, 66px);
+  font-weight: 900; color: var(--text);
+  line-height: 1.1; margin-bottom: 14px; opacity: 0;
 }
-
-.slide.active .slide-title {
-  animation: fadeUp 0.55s 0.12s forwards;
-}
+.slide.active .slide-title { animation: fadeUp 0.55s 0.12s forwards; }
 
 .slide-sub {
-  font-size: clamp(14px, 1.5vw, 18px);
-  color: var(--muted);
-  font-weight: 300;
-  line-height: 1.7;
-  max-width: 620px;
-  margin-bottom: 40px;
-  opacity: 0;
+  font-size: clamp(13px, 1.4vw, 17px);
+  color: var(--muted); font-weight: 300;
+  line-height: 1.7; max-width: 600px;
+  margin-bottom: 28px; opacity: 0;
 }
+.slide.active .slide-sub { animation: fadeUp 0.55s 0.2s forwards; }
 
-.slide.active .slide-sub {
-  animation: fadeUp 0.55s 0.2s forwards;
-}
-
-.accent-word {
-  color: var(--accent);
-  font-style: italic;
-}
+.accent-word { color: var(--accent); font-style: italic; }
 
 /* ============================================================
-   REFERENCE TABLE
+   SCROLLABLE INNER
    ============================================================ */
-.ref-table-wrap {
-  width: 100%;
-  max-width: 860px;
-  opacity: 0;
+.slide-inner {
+  width: 100%; max-width: 920px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+  scrollbar-width: none; padding-bottom: 20px;
 }
+.slide-inner::-webkit-scrollbar { display: none; }
 
-.slide.active .ref-table-wrap {
-  animation: fadeUp 0.55s 0.25s forwards;
-}
+/* ============================================================
+   TABLE
+   ============================================================ */
+.ref-table-wrap { width: 100%; max-width: 880px; opacity: 0; }
+.slide.active .ref-table-wrap { animation: fadeUp 0.55s 0.25s forwards; }
 
-.ref-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: var(--font-body);
-  text-align: right;
-}
-
+.ref-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); text-align: right; }
 .ref-table th {
-  background: var(--surface);
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 10px 16px;
-  border: 1px solid var(--border);
+  background: var(--surface); color: var(--accent);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 10px 16px; border: 1px solid var(--border);
 }
-
 .ref-table td {
-  padding: 11px 16px;
-  border: 1px solid rgba(0,0,0,0.05);
-  font-size: 13.5px;
-  color: var(--text);
-  vertical-align: top;
-  line-height: 1.65;
-  background: rgba(255,255,255,0.5);
+  padding: 11px 16px; border: 1px solid rgba(0,0,0,0.05);
+  font-size: 13px; color: var(--text);
+  vertical-align: top; line-height: 1.65;
+  background: rgba(255,255,255,0.52);
   transition: background 0.2s;
 }
-
 .ref-table tr:hover td { background: var(--surface); }
 
 code {
   font-family: var(--font-code);
-  background: rgba(0,0,0,0.05);
+  background: rgba(0,0,0,0.06);
   border: 1px solid var(--border);
   color: var(--accent);
-  padding: 2px 8px;
-  border-radius: 5px;
-  font-size: 12.5px;
-  direction: ltr;
-  display: inline-block;
+  padding: 2px 7px; border-radius: 5px;
+  font-size: 12px; direction: ltr; display: inline-block;
 }
 
 .code-line {
   display: block;
   background: rgba(0,0,0,0.04);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-family: var(--font-code);
-  font-size: 12.5px;
-  direction: ltr;
-  text-align: left;
-  line-height: 1.7;
-  margin-top: 2px;
-  color: var(--text);
-  white-space: pre;
+  border-radius: 8px; padding: 9px 13px;
+  font-family: var(--font-code); font-size: 12px;
+  direction: ltr; text-align: left; line-height: 1.7;
+  margin-top: 2px; color: var(--text); white-space: pre;
 }
 
 .cp { color: #1a5fd4; } /* property */
@@ -339,592 +259,331 @@ code {
 .ct { color: #c4285c; } /* tag */
 .ca { color: #b86a00; } /* attribute */
 .cs { color: #0a8a7a; } /* string */
-.cm { color: #aaa; font-style: italic; } /* comment */
+.cm { color: #999; font-style: italic; } /* comment */
 
 /* ============================================================
-   EXAMPLE BADGE + PRACTICE
+   BADGES
    ============================================================ */
 .example-pill {
   display: inline-block;
-  background: var(--tag-bg);
-  border: 1px solid var(--border);
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 20px;
-  margin-bottom: 6px;
-}
-
-.example-result {
-  display: inline-block;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 18px;
-  font-size: 14px;
-  color: var(--text);
-  margin-top: 4px;
+  background: var(--tag-bg); border: 1px solid var(--border);
+  color: var(--accent); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 20px;
 }
 
 /* ============================================================
-   SPLIT LAYOUT
+   SPLIT
    ============================================================ */
 .split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 100%;
-  max-width: 900px;
-  opacity: 0;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 18px; width: 100%; max-width: 920px; opacity: 0;
 }
-
-.slide.active .split {
-  animation: fadeUp 0.55s 0.25s forwards;
-}
+.slide.active .split { animation: fadeUp 0.55s 0.25s forwards; }
 
 .split-card {
   background: rgba(255,255,255,0.65);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 22px 24px;
-  text-align: right;
+  border-radius: 14px; padding: 20px 22px; text-align: right;
 }
-
 .split-card .card-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  margin-bottom: 12px;
-  text-transform: uppercase;
+  font-size: 12px; font-weight: 700; color: var(--accent);
+  letter-spacing: 0.08em; margin-bottom: 10px; text-transform: uppercase;
 }
-
-.split-card p {
-  font-size: 13.5px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 10px;
-}
+.split-card p { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
 
 /* ============================================================
-   PRACTICE SECTION
+   TIP BOX
    ============================================================ */
-.practice-wrap {
-  width: 100%;
-  max-width: 860px;
-  opacity: 0;
-  text-align: right;
+.tip-box {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: var(--tag-bg); border: 1px solid var(--border);
+  border-right: 3px solid var(--accent);
+  border-radius: 10px; padding: 12px 16px;
+  text-align: right; margin-top: 14px; opacity: 0;
+  width: 100%; max-width: 880px;
 }
-
-.slide.active .practice-wrap {
-  animation: fadeUp 0.55s 0.2s forwards;
-}
-
-.practice-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-  justify-content: flex-end;
-}
-
-.practice-header .badge {
-  background: var(--accent);
-  color: var(--bg-from);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  letter-spacing: 0.08em;
-}
-
-.practice-header h3 {
-  font-family: var(--font-head);
-  font-size: 20px;
-  color: var(--text);
-}
-
-.tasks-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.task-card {
-  background: rgba(255,255,255,0.65);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 18px;
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, transform 0.15s;
-  position: relative;
-}
-
-.task-card:hover {
-  border-color: var(--accent);
-  background: rgba(255,255,255,0.85);
-  transform: translateY(-2px);
-}
-
-.task-card.done {
-  border-color: var(--accent);
-}
-
-.task-card.done::after {
-  content: '✓';
-  position: absolute;
-  top: 10px;
-  left: 14px;
-  color: var(--accent);
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.task-num {
-  font-family: var(--font-head);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--border);
-  margin-bottom: 4px;
-  line-height: 1;
-}
-
-.task-card.done .task-num { color: var(--accent); }
-
-.task-title {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-
-.task-desc {
-  font-size: 12.5px;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-.practice-code {
-  background: rgba(255,255,255,0.75);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px 20px;
-  font-family: var(--font-code);
-  font-size: 13px;
-  direction: ltr;
-  text-align: left;
-  line-height: 1.8;
-  color: var(--text);
-  position: relative;
-  overflow-x: auto;
-}
-
-.edit-hint {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  font-family: var(--font-body);
-  font-size: 11px;
-  color: var(--muted);
-  direction: rtl;
-  background: var(--surface);
-  padding: 3px 8px;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-}
-
-/* editable practice code */
-.live-code {
-  outline: none;
-  white-space: pre;
-  min-height: 60px;
-}
-
-.live-preview {
-  margin-top: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 20px;
-  min-height: 50px;
-  direction: rtl;
-  text-align: right;
-}
-
-.preview-label {
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
+.slide.active .tip-box { animation: fadeUp 0.5s 0.45s forwards; }
+.tip-box p { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+.tip-box strong { color: var(--accent); }
 
 /* ============================================================
-   STAT CARDS ROW
+   REAL-WORLD BOX
    ============================================================ */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  width: 100%;
-  max-width: 860px;
-  opacity: 0;
-  margin-bottom: 24px;
-}
-
-.slide.active .stats-row {
-  animation: fadeUp 0.55s 0.22s forwards;
-}
-
-.stat-card {
-  background: rgba(255,255,255,0.65);
+.real-world {
+  background: rgba(255,255,255,0.6);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 18px 16px;
-  text-align: center;
+  border-top: 3px solid var(--accent2);
+  border-radius: 10px; padding: 14px 18px;
+  width: 100%; max-width: 880px;
+  margin-top: 14px; text-align: right; opacity: 0;
 }
-
-.stat-num {
-  font-family: var(--font-head);
-  font-size: 38px;
-  font-weight: 900;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
+.slide.active .real-world { animation: fadeUp 0.5s 0.5s forwards; }
+.real-world-label {
+  font-size: 10px; font-weight: 700; color: var(--accent2);
+  letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 6px;
 }
-
-.stat-label {
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-/* Progress bar */
-.prog-bar-wrap {
-  margin-top: 8px;
-  height: 3px;
-  background: rgba(0,0,0,0.08);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.prog-bar {
-  height: 100%;
-  background: var(--accent);
-  border-radius: 2px;
-  width: 0;
-  transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
-}
+.real-world p { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
 
 /* ============================================================
-   LEADERBOARD / LIST ROWS
+   LIST ROWS
    ============================================================ */
 .list-rows {
-  width: 100%;
-  max-width: 860px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  opacity: 0;
+  width: 100%; max-width: 880px;
+  display: flex; flex-direction: column; gap: 8px; opacity: 0;
 }
-
-.slide.active .list-rows {
-  animation: fadeUp 0.55s 0.28s forwards;
-}
+.slide.active .list-rows { animation: fadeUp 0.55s 0.28s forwards; }
 
 .list-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  display: flex; align-items: center; gap: 14px;
   background: rgba(255,255,255,0.65);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px 18px;
-  opacity: 0;
-  transform: translateX(20px);
+  border-radius: 10px; padding: 11px 16px;
+  opacity: 0; transform: translateX(20px);
   transition: border-color 0.2s;
 }
-
-.slide.active .list-row:nth-child(1) { animation: slideInR 0.4s 0.3s forwards; }
+.slide.active .list-row:nth-child(1) { animation: slideInR 0.4s 0.30s forwards; }
 .slide.active .list-row:nth-child(2) { animation: slideInR 0.4s 0.38s forwards; }
 .slide.active .list-row:nth-child(3) { animation: slideInR 0.4s 0.46s forwards; }
 .slide.active .list-row:nth-child(4) { animation: slideInR 0.4s 0.54s forwards; }
 .slide.active .list-row:nth-child(5) { animation: slideInR 0.4s 0.62s forwards; }
 .slide.active .list-row:nth-child(6) { animation: slideInR 0.4s 0.70s forwards; }
-
 .list-row:hover { border-color: var(--accent); }
 
-.row-num {
-  font-family: var(--font-head);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--accent);
-  min-width: 28px;
-  text-align: center;
-}
-
-.row-main {
-  flex: 1;
-}
-
-.row-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 1px;
-}
-
-.row-desc {
-  font-size: 12.5px;
-  color: var(--muted);
-}
-
-.row-code {
-  font-family: var(--font-code);
-  font-size: 12px;
-  background: rgba(0,0,0,0.06);
-  border: 1px solid var(--border);
-  color: var(--accent);
-  padding: 3px 10px;
-  border-radius: 6px;
-  direction: ltr;
-  white-space: nowrap;
-}
+.row-num { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--accent); min-width: 28px; text-align: center; }
+.row-main { flex: 1; }
+.row-title { font-size: 13.5px; font-weight: 600; color: var(--text); margin-bottom: 1px; }
+.row-desc { font-size: 12px; color: var(--muted); }
+.row-code { font-family: var(--font-code); font-size: 11.5px; background: rgba(0,0,0,0.06); border: 1px solid var(--border); color: var(--accent); padding: 3px 9px; border-radius: 6px; direction: ltr; white-space: nowrap; }
 
 /* ============================================================
-   NAV
+   STAT CARDS
    ============================================================ */
-.nav-bar {
-  position: fixed;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: rgba(255,255,255,0.75);
-  border: 1px solid rgba(0,0,0,0.10);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: 50px;
-  padding: 10px 20px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+.stats-row {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 12px; width: 100%; max-width: 880px; opacity: 0; margin-bottom: 20px;
 }
+.slide.active .stats-row { animation: fadeUp 0.55s 0.22s forwards; }
 
-.nav-btn {
-  background: none;
-  border: none;
-  color: rgba(0,0,0,0.35);
-  font-size: 20px;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 8px;
-  transition: color 0.2s, background 0.2s;
-  line-height: 1;
-}
-
-.nav-btn:hover { color: #000; background: rgba(0,0,0,0.06); }
-
-.dots {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.15);
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s, width 0.3s;
-  border: none;
-}
-
-.dot.active {
-  background: var(--accent, #1a5fd4);
-  transform: scale(1.2);
-  width: 20px;
-  border-radius: 4px;
-}
-
-.slide-counter {
-  font-family: var(--font-code);
-  font-size: 12px;
-  color: rgba(0,0,0,0.3);
-  min-width: 40px;
-  text-align: center;
-}
+.stat-card { background: rgba(255,255,255,0.65); border: 1px solid var(--border); border-radius: 14px; padding: 16px 14px; text-align: center; }
+.stat-num { font-family: var(--font-head); font-size: 36px; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 5px; }
+.stat-label { font-size: 11px; color: var(--muted); font-weight: 500; }
+.prog-bar-wrap { margin-top: 8px; height: 3px; background: rgba(0,0,0,0.08); border-radius: 2px; overflow: hidden; }
+.prog-bar { height: 100%; background: var(--accent); border-radius: 2px; width: 0; transition: width 1.2s cubic-bezier(0.22,1,0.36,1); }
 
 /* ============================================================
-   PROGRESS STRIPE
+   COVER
    ============================================================ */
-.progress-stripe {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--accent, #4f8ef7);
-  transition: width var(--transition), background var(--transition);
-  z-index: 200;
-  box-shadow: 0 0 12px var(--glow, rgba(79,142,247,0.4));
-}
-
-/* ============================================================
-   ANIMATIONS
-   ============================================================ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInR {
-  from { opacity: 0; transform: translateX(20px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes countUp {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* ============================================================
-   DECORATIVE LINE ACCENT
-   ============================================================ */
-.line-accent {
-  width: 48px;
-  height: 3px;
-  background: var(--accent);
-  border-radius: 2px;
-  margin: 0 auto 20px;
-  opacity: 0;
-}
-
-.slide.active .line-accent {
-  animation: fadeUp 0.4s 0.08s forwards;
-}
-
-/* ============================================================
-   COVER SLIDE SPECIFIC
-   ============================================================ */
-.cover-kicker {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 20px;
-  opacity: 0;
-}
+.cover-kicker { font-size: 11px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; opacity: 0; }
 .slide.active .cover-kicker { animation: fadeUp 0.5s 0.05s forwards; }
 
-.cover-title {
-  font-family: var(--font-head);
-  font-size: clamp(44px, 7vw, 90px);
-  font-weight: 900;
-  color: var(--text);
-  line-height: 1.0;
-  margin-bottom: 24px;
-  opacity: 0;
-}
+.cover-title { font-family: var(--font-head); font-size: clamp(44px, 7vw, 90px); font-weight: 900; color: var(--text); line-height: 1.0; margin-bottom: 22px; opacity: 0; }
 .slide.active .cover-title { animation: fadeUp 0.6s 0.15s forwards; }
 
-.cover-desc {
-  font-size: clamp(14px, 1.4vw, 17px);
-  color: var(--muted);
-  max-width: 520px;
-  line-height: 1.75;
-  font-weight: 300;
-  margin-bottom: 36px;
-  opacity: 0;
-}
+.cover-desc { font-size: clamp(13px, 1.3vw, 16px); color: var(--muted); max-width: 500px; line-height: 1.75; font-weight: 300; margin-bottom: 32px; opacity: 0; }
 .slide.active .cover-desc { animation: fadeUp 0.6s 0.25s forwards; }
 
 .cover-start {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--accent);
-  color: var(--bg-from);
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.05em;
-  padding: 12px 28px;
-  border-radius: 50px;
-  cursor: pointer;
-  border: none;
-  transition: opacity 0.2s, transform 0.2s;
-  opacity: 0;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--accent); color: var(--bg-from);
+  font-family: var(--font-body); font-weight: 700; font-size: 14px;
+  letter-spacing: 0.05em; padding: 12px 28px; border-radius: 50px;
+  cursor: pointer; border: none;
+  transition: opacity 0.2s, transform 0.2s; opacity: 0;
 }
 .slide.active .cover-start { animation: fadeUp 0.5s 0.4s forwards; }
 .cover-start:hover { opacity: 0.85; transform: scale(1.03); }
 
 /* ============================================================
-   CHAPTER SLIDE (section divider)
+   CHAPTER DIVIDER
    ============================================================ */
-.chapter-num {
-  font-family: var(--font-head);
-  font-size: clamp(80px, 14vw, 160px);
-  font-weight: 900;
-  color: var(--surface);
-  line-height: 1;
-  margin-bottom: -10px;
-  opacity: 0;
-  letter-spacing: -0.04em;
-}
+.chapter-num { font-family: var(--font-head); font-size: clamp(80px, 14vw, 160px); font-weight: 900; color: var(--surface); line-height: 1; margin-bottom: -10px; opacity: 0; letter-spacing: -0.04em; }
 .slide.active .chapter-num { animation: fadeUp 0.5s 0.05s forwards; }
 
 /* ============================================================
-   TIP / NOTE BOX
+   BEFORE / AFTER
    ============================================================ */
-.tip-box {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: var(--tag-bg);
+.before-after {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; width: 100%; max-width: 880px; opacity: 0; margin-top: 10px;
+}
+.slide.active .before-after { animation: fadeUp 0.55s 0.3s forwards; }
+
+.ba-card {
+  background: rgba(255,255,255,0.65);
   border: 1px solid var(--border);
-  border-right: 3px solid var(--accent);
-  border-radius: 10px;
-  padding: 14px 18px;
-  text-align: right;
-  margin-top: 16px;
-  opacity: 0;
-  width: 100%;
-  max-width: 860px;
+  border-radius: 12px; padding: 16px 18px;
 }
-
-.slide.active .tip-box { animation: fadeUp 0.5s 0.45s forwards; }
-
-.tip-box p {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.tip-box strong { color: var(--accent); }
+.ba-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 10px; }
+.ba-label.before { color: #c0392b; }
+.ba-label.after  { color: #0e8a5a; }
 
 /* ============================================================
-   SCROLLABLE SLIDE CONTENT
+   LIVE EDITOR — الجوهرة
    ============================================================ */
-.slide-inner {
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  overflow-y: auto;
-  max-height: calc(100vh - 130px);
-  scrollbar-width: none;
-  padding-bottom: 20px;
+.editor-slide {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 20px 28px 80px !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
 }
-.slide-inner::-webkit-scrollbar { display: none; }
 
+.editor-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px; opacity: 0; flex-shrink: 0;
+}
+.slide.active .editor-header { animation: fadeUp 0.5s 0.08s forwards; }
+
+.editor-title { font-family: var(--font-head); font-size: clamp(20px, 2.5vw, 32px); font-weight: 900; color: var(--text); }
+.editor-badge { background: var(--accent); color: white; font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.1em; }
+
+.editor-desc { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; line-height: 1.6; opacity: 0; flex-shrink: 0; }
+.slide.active .editor-desc { animation: fadeUp 0.5s 0.15s forwards; }
+
+.editor-tasks { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; opacity: 0; flex-shrink: 0; }
+.slide.active .editor-tasks { animation: fadeUp 0.5s 0.2s forwards; }
+
+.task-chip {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 11.5px; color: var(--muted); cursor: pointer;
+  transition: all 0.2s; white-space: nowrap;
+}
+.task-chip:hover { border-color: var(--accent); color: var(--accent); }
+.task-chip.done { background: var(--accent); color: white; border-color: var(--accent); }
+.task-chip.done::before { content: '✓ '; }
+
+.editor-pane {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; flex: 1; min-height: 0; opacity: 0;
+}
+.slide.active .editor-pane { animation: fadeUp 0.55s 0.25s forwards; }
+
+.pane-wrap { display: flex; flex-direction: column; min-height: 0; }
+.pane-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+.pane-label span { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1px 7px; }
+
+.code-editor {
+  flex: 1; min-height: 0;
+  background: rgba(20,20,35,0.92);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-family: var(--font-code); font-size: 12px;
+  direction: ltr; text-align: left; line-height: 1.75;
+  color: #e8e8f0; resize: none; outline: none;
+  overflow-y: auto; tab-size: 2;
+  transition: border-color 0.2s;
+  user-select: text;
+}
+.code-editor:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--glow); }
+
+.preview-pane {
+  flex: 1; min-height: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.preview-pane iframe { width: 100%; height: 100%; border: none; display: block; }
+
+.reset-btn {
+  margin-top: 6px; align-self: flex-end;
+  background: none; border: 1px solid var(--border);
+  color: var(--muted); font-family: var(--font-body);
+  font-size: 11px; padding: 3px 10px; border-radius: 6px;
+  cursor: pointer; transition: all 0.2s;
+}
+.reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ============================================================
+   SPECIFICITY VISUAL
+   ============================================================ */
+.spec-bars { display: flex; gap: 16px; align-items: flex-end; justify-content: center; margin: 20px 0; opacity: 0; }
+.slide.active .spec-bars { animation: fadeUp 0.5s 0.3s forwards; }
+.spec-bar-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.spec-bar { width: 70px; border-radius: 8px 8px 0 0; background: var(--accent); opacity: 0.85; transition: height 1.2s cubic-bezier(0.22,1,0.36,1); }
+.spec-bar-label { font-size: 11px; font-weight: 600; color: var(--text); text-align: center; }
+.spec-bar-val { font-family: var(--font-head); font-size: 22px; font-weight: 900; color: var(--accent); }
+
+/* ============================================================
+   QUIZ
+   ============================================================ */
+.quiz-wrap { width: 100%; max-width: 680px; opacity: 0; }
+.slide.active .quiz-wrap { animation: fadeUp 0.55s 0.25s forwards; }
+
+.quiz-q { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 18px; line-height: 1.5; }
+.quiz-options { display: flex; flex-direction: column; gap: 10px; }
+.quiz-opt {
+  background: rgba(255,255,255,0.65); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 18px; cursor: pointer;
+  font-size: 13.5px; color: var(--text); text-align: right;
+  transition: all 0.2s; display: flex; align-items: center; gap: 12px;
+}
+.quiz-opt:hover { border-color: var(--accent); background: rgba(255,255,255,0.85); }
+.quiz-opt.correct { border-color: #0e8a5a; background: rgba(14,138,90,0.08); color: #0e8a5a; }
+.quiz-opt.wrong { border-color: #c4285c; background: rgba(196,40,92,0.08); color: #c4285c; }
+.quiz-opt .opt-icon { font-size: 16px; min-width: 20px; text-align: center; }
+.quiz-feedback { margin-top: 16px; padding: 12px 16px; border-radius: 10px; font-size: 13px; line-height: 1.6; display: none; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.ok { background: rgba(14,138,90,0.1); border: 1px solid rgba(14,138,90,0.2); color: #0e8a5a; }
+.quiz-feedback.no { background: rgba(196,40,92,0.08); border: 1px solid rgba(196,40,92,0.2); color: #c4285c; }
+
+/* ============================================================
+   CHEAT SHEET
+   ============================================================ */
+.cheat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 10px; width: 100%; max-width: 880px; opacity: 0;
+}
+.slide.active .cheat-grid { animation: fadeUp 0.55s 0.25s forwards; }
+
+.cheat-card { background: rgba(255,255,255,0.65); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.cheat-cat { font-size: 10px; font-weight: 700; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
+.cheat-item { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.04); gap: 8px; }
+.cheat-item:last-child { border-bottom: none; }
+.cheat-item span { font-size: 11.5px; color: var(--muted); }
+.cheat-item code { font-size: 11px; }
+
+/* ============================================================
+   PROGRESS + NAV
+   ============================================================ */
+.progress-stripe {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: var(--accent);
+  transition: width var(--transition), background var(--transition);
+  z-index: 200; box-shadow: 0 0 12px var(--glow);
+}
+
+.nav-bar {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  z-index: 100; display: flex; align-items: center; gap: 16px;
+  background: rgba(255,255,255,0.8); border: 1px solid rgba(0,0,0,0.10);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-radius: 50px; padding: 9px 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.nav-btn { background: none; border: none; color: rgba(0,0,0,0.35); font-size: 18px; cursor: pointer; padding: 4px 8px; border-radius: 8px; transition: color 0.2s, background 0.2s; line-height: 1; }
+.nav-btn:hover { color: #000; background: rgba(0,0,0,0.06); }
+
+.dots { display: flex; gap: 5px; align-items: center; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(0,0,0,0.15); cursor: pointer; transition: background 0.3s, width 0.3s; border: none; }
+.dot.active { background: var(--accent); width: 18px; border-radius: 3px; }
+
+.slide-counter { font-family: var(--font-code); font-size: 11px; color: rgba(0,0,0,0.3); min-width: 38px; text-align: center; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+@keyframes slideInR { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:translateX(0); } }
+
+/* ============================================================
+   LINE ACCENT
+   ============================================================ */
+.line-accent { width: 44px; height: 3px; background: var(--accent); border-radius: 2px; margin: 0 auto 18px; opacity: 0; }
+.slide.active .line-accent { animation: fadeUp 0.4s 0.08s forwards; }
 </style>
 </head>
 <body>
@@ -937,85 +596,152 @@ code {
 
   <div class="slides-wrap" id="slidesWrap">
 
-    <!-- ===================================================
-         SLIDE 0 — COVER
-         =================================================== -->
+    <!-- ======================================================
+         0 — COVER
+         ====================================================== -->
     <div class="slide" data-theme="blue" data-idx="0">
-      <div class="cover-kicker">مرجع HTML & CSS</div>
-      <div class="cover-title">إقرأ<br><span style="color:var(--accent)">أي</span> كود</div>
+      <div class="cover-kicker">مرجع HTML & CSS للمبتدئين</div>
+      <div class="cover-title">اقرأ<br><span style="color:var(--accent)">أي</span> كود</div>
       <div class="cover-desc">
-        كل حاجة محتاجها عشان تفهم وتعدّل في أي كود HTML/CSS —
-        أمثلة حية، جداول مرجعية، وتطبيقات عملية بعد كل درس
+        مرجع تفاعلي — كل درس فيه شرح + أمثلة حية تعدّل فيها وتشوف النتيجة على طول.<br>
+        مش هتحتاج تفتح أي برنامج تاني.
       </div>
-      <button class="cover-start" onclick="goToSlide(1)">
-        ابدأ ← 
-      </button>
+      <button class="cover-start" onclick="goToSlide(1)">ابدأ المرجع ←</button>
     </div>
 
-    <!-- ===================================================
-         SLIDE 1 — الألوان (جدول + مثال)
-         =================================================== -->
+    <!-- ======================================================
+         1 — الألوان (شرح + before/after)
+         ====================================================== -->
     <div class="slide" data-theme="rose" data-idx="1">
       <div class="slide-inner">
         <div class="slide-label">الدرس الأول</div>
         <div class="slide-title">🎨 الألوان</div>
-        <div class="slide-sub">في CSS فيه 3 خصائص بس للألوان — اعرفهم واعرف تلاقيهم في أي كود</div>
+        <div class="slide-sub">3 خصائص بس — اعرفهم واعرف تلاقيهم في أي كود</div>
 
         <div class="ref-table-wrap">
           <table class="ref-table">
-            <thead>
-              <tr>
-                <th style="width:22%">الخاصية</th>
-                <th style="width:32%">مثال</th>
-                <th>بتتحكم في إيه</th>
-                <th style="width:14%">نوع</th>
-              </tr>
-            </thead>
+            <thead><tr><th style="width:22%">الخاصية</th><th style="width:36%">مثال</th><th>بتتحكم في إيه</th></tr></thead>
             <tbody>
               <tr>
                 <td><code>color</code></td>
                 <td><code class="code-line"><span class="cp">color</span>: <span class="cv">#e53935</span>;</code></td>
                 <td>لون النص نفسه</td>
-                <td><span class="example-pill">نص</span></td>
               </tr>
               <tr>
                 <td><code>background-color</code></td>
                 <td><code class="code-line"><span class="cp">background-color</span>: <span class="cv">#fff8e1</span>;</code></td>
-                <td>لون خلفية العنصر كله</td>
-                <td><span class="example-pill">خلفية</span></td>
+                <td>لون خلفية العنصر</td>
               </tr>
               <tr>
                 <td><code>border-color</code></td>
                 <td><code class="code-line"><span class="cp">border-color</span>: <span class="cv">#cccccc</span>;</code></td>
                 <td>لون الإطار حوالين العنصر</td>
-                <td><span class="example-pill">إطار</span></td>
               </tr>
               <tr>
                 <td>صيغ الألوان</td>
-                <td>
-                  <code>#ff0000</code> = أحمر<br>
-                  <code>rgb(255,0,0)</code> = أحمر<br>
-                  <code>red</code> = أحمر
-                </td>
-                <td>3 طرق تكتب نفس اللون — <strong style="color:var(--accent)">الـ HEX (#) الأكتر استخداماً</strong><br>
-                  <small>استخدم Google "color picker" عشان تلاقي الكود</small>
-                </td>
-                <td><span class="example-pill">مرجع</span></td>
+                <td><code>#ff0000</code> أو <code>rgb(255,0,0)</code> أو <code>red</code></td>
+                <td>3 طرق لنفس اللون — <strong style="color:var(--accent)">الـ HEX الأكتر استخداماً</strong></td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="tip-box">
-          <p><strong>لو عايز تغير لون في أي كود:</strong> ابحث بـ Ctrl+F عن <code>#</code> أو عن كلمة <code>color</code> وهتلاقي كل الألوان في الصفحة على طول</p>
+        <div class="before-after">
+          <div class="ba-card">
+            <div class="ba-label before">❌ قبل</div>
+            <div style="font-size:13px; color:#666; font-family:monospace; direction:ltr; line-height:1.7;">h1 {<br>&nbsp;&nbsp;/* مفيش color */}<br><br>→ النص هيبقى أسود تلقائياً</div>
+          </div>
+          <div class="ba-card">
+            <div class="ba-label after">✅ بعد</div>
+            <div style="font-size:13px; font-family:monospace; direction:ltr; line-height:1.7; color:#444;">h1 {<br>&nbsp;&nbsp;<span style="color:#1a5fd4">color</span>: <span style="color:#0e8a5a">#c4285c</span>;<br>}<br><br>→ <span style="color:#c4285c; font-weight:700;">النص بقى وردي</span></div>
+          </div>
+        </div>
+
+        <div class="real-world" style="opacity:0" id="rw1">
+          <div class="real-world-label">🌍 في الحياة الحقيقية</div>
+          <p>موقع زي Airbnb أو Spotify — لو عايز تغير اللون الرئيسي، بتدور على <code>color:</code> أو <code>background-color:</code> في CSS وبتغير الـ HEX code. Google "color picker" وهيديلك الكود.</p>
+        </div>
+        <div class="tip-box" style="animation-delay:0.55s;">
+          <p><strong>تلميحة البحث:</strong> Ctrl+F في أي ملف CSS واكتب <code>#</code> — هتلاقي كل الألوان على طول</p>
         </div>
       </div>
     </div>
 
-    <!-- ===================================================
-         SLIDE 2 — الحجم
-         =================================================== -->
-    <div class="slide" data-theme="blue" data-idx="2">
+    <!-- ======================================================
+         2 — تجربة الألوان LIVE
+         ====================================================== -->
+    <div class="slide editor-slide" data-theme="rose" data-idx="2">
+      <div class="editor-header">
+        <div>
+          <div class="editor-title">🎨 جرّب الألوان بنفسك</div>
+        </div>
+        <div class="editor-badge">LIVE EDITOR</div>
+      </div>
+      <div class="editor-desc">غيّر أي رقم أو لون في الكود على الشمال — النتيجة بتظهر على اليمين فوراً ✨</div>
+      <div class="editor-tasks" id="tasks-2">
+        <div class="task-chip" onclick="markTask(this)">① غيّر لون العنوان</div>
+        <div class="task-chip" onclick="markTask(this)">② غيّر الخلفية</div>
+        <div class="task-chip" onclick="markTask(this)">③ جرّب rgb()</div>
+      </div>
+      <div class="editor-pane">
+        <div class="pane-wrap">
+          <div class="pane-label">✏️ الكود <span>عدّل هنا</span></div>
+          <textarea class="code-editor" id="code-2" spellcheck="false" oninput="updatePreview('2')"><!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4ff;
+    padding: 30px;
+  }
+
+  h1 {
+    /* ← غيّر اللون هنا */
+    color: #c4285c;
+    font-size: 28px;
+  }
+
+  p {
+    color: #444444;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .box {
+    background-color: #ffffff;
+    border-color: #dddddd;
+    border-style: solid;
+    border-width: 1px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>مرحباً بالعالم 👋</h1>
+    <p>غيّر الألوان في CSS
+وشوف النتيجة هنا على طول!</p>
+    <p style="color: rgb(14, 138, 90);">
+      النص ده لونه بـ rgb()
+    </p>
+  </div>
+</body>
+</html></textarea>
+          <button class="reset-btn" onclick="resetCode('2')">↺ إعادة تعيين</button>
+        </div>
+        <div class="pane-wrap">
+          <div class="pane-label">👁️ النتيجة <span>تتحدث تلقائياً</span></div>
+          <div class="preview-pane"><iframe id="preview-2"></iframe></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         3 — الحجم
+         ====================================================== -->
+    <div class="slide" data-theme="blue" data-idx="3">
       <div class="slide-inner">
         <div class="slide-label">الدرس التاني</div>
         <div class="slide-title">📐 الحجم</div>
@@ -1023,112 +749,177 @@ code {
 
         <div class="ref-table-wrap">
           <table class="ref-table">
-            <thead>
-              <tr>
-                <th style="width:20%">الخاصية</th>
-                <th style="width:38%">مثال</th>
-                <th>بتتحكم في إيه</th>
-              </tr>
-            </thead>
+            <thead><tr><th style="width:20%">الخاصية</th><th style="width:40%">مثال</th><th>بتتحكم في إيه</th></tr></thead>
             <tbody>
               <tr>
                 <td><code>font-size</code></td>
                 <td><code class="code-line"><span class="cp">font-size</span>: <span class="cv">16px</span>; <span class="cm">/* حجم النص */</span></code></td>
-                <td>حجم النص — كبّره أو صغّره بتغيير الرقم</td>
+                <td>حجم الحروف — كبّر الرقم = نص أكبر</td>
               </tr>
               <tr>
-                <td><code>width</code></td>
+                <td><code>width</code> / <code>height</code></td>
                 <td><code class="code-line"><span class="cp">width</span>: <span class="cv">300px</span>; <span class="cm">/* ثابت */</span>
 <span class="cp">width</span>: <span class="cv">50%</span>; <span class="cm">/* نسبة من الأب */</span></code></td>
-                <td>عرض العنصر — px ثابت / % نسبة</td>
-              </tr>
-              <tr>
-                <td><code>height</code></td>
-                <td><code class="code-line"><span class="cp">height</span>: <span class="cv">200px</span>;</code></td>
-                <td>ارتفاع العنصر</td>
+                <td>px = ثابت مهما كانت الشاشة / % = نسبة</td>
               </tr>
               <tr>
                 <td><code>max-width</code></td>
-                <td><code class="code-line"><span class="cp">max-width</span>: <span class="cv">700px</span>; <span class="cm">/* حد أقصى */</span>
-<span class="cp">min-height</span>: <span class="cv">100px</span>; <span class="cm">/* حد أدنى */</span></code></td>
-                <td>العنصر مش هيكبر / يصغر أكتر من الرقم ده</td>
+                <td><code class="code-line"><span class="cp">max-width</span>: <span class="cv">700px</span>;</code></td>
+                <td>العنصر مش هيكبر أكتر من كده حتى لو الشاشة كبيرة</td>
+              </tr>
+              <tr>
+                <td><code>min-height</code></td>
+                <td><code class="code-line"><span class="cp">min-height</span>: <span class="cv">100px</span>;</code></td>
+                <td>العنصر مش هيصغر أقل من كده</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="stats-row" style="margin-top:18px;">
-          <div class="stat-card">
-            <div class="stat-num" data-target="16">0</div>
-            <div class="stat-label">font-size افتراضي (px)</div>
-            <div class="prog-bar-wrap"><div class="prog-bar" data-width="20"></div></div>
+        <div class="before-after">
+          <div class="ba-card">
+            <div class="ba-label before">❌ مشكلة شائعة</div>
+            <div style="font-size:12.5px; color:#888; font-family:monospace; direction:ltr; line-height:1.7;">img {<br>&nbsp;&nbsp;width: 800px;<br>}<br><br>→ الصورة بتخرج برّا الشاشة<br>على الموبايل!</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-num" data-target="100">0</div>
-            <div class="stat-label">أقصى % عرض ممكن</div>
-            <div class="prog-bar-wrap"><div class="prog-bar" data-width="100"></div></div>
+          <div class="ba-card">
+            <div class="ba-label after">✅ الحل</div>
+            <div style="font-size:12.5px; font-family:monospace; direction:ltr; line-height:1.7; color:#444;">img {<br>&nbsp;&nbsp;<span style="color:#1a5fd4">max-width</span>: <span style="color:#0e8a5a">100%</span>;<br>&nbsp;&nbsp;<span style="color:#1a5fd4">height</span>: <span style="color:#0e8a5a">auto</span>;<br>}<br><br>→ <span style="color:#0e8a5a;">بتتناسب مع أي شاشة</span></div>
           </div>
-          <div class="stat-card">
-            <div class="stat-num" data-target="3">0</div>
-            <div class="stat-label">وحدات: px / % / rem</div>
-            <div class="prog-bar-wrap"><div class="prog-bar" data-width="60"></div></div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num" data-target="1">0</div>
-            <div class="stat-label">سطر بيغير الحجم</div>
-            <div class="prog-bar-wrap"><div class="prog-bar" data-width="100"></div></div>
-          </div>
+        </div>
+
+        <div class="tip-box">
+          <p><strong>قاعدة ذهبية:</strong> استخدم <code>max-width: 100%</code> دايماً على الصور — بتمنع إنها تكسر الـ Layout على الموبايل</p>
         </div>
       </div>
     </div>
 
-    <!-- ===================================================
-         SLIDE 3 — المسافات
-         =================================================== -->
-    <div class="slide" data-theme="teal" data-idx="3">
+    <!-- ======================================================
+         4 — تجربة الحجم LIVE
+         ====================================================== -->
+    <div class="slide editor-slide" data-theme="blue" data-idx="4">
+      <div class="editor-header">
+        <div class="editor-title">📐 جرّب الحجم بنفسك</div>
+        <div class="editor-badge">LIVE EDITOR</div>
+      </div>
+      <div class="editor-desc">غيّر الأرقام وشوف الفرق فوراً — جرّب px وجرّب %</div>
+      <div class="editor-tasks" id="tasks-4">
+        <div class="task-chip" onclick="markTask(this)">① كبّر font-size</div>
+        <div class="task-chip" onclick="markTask(this)">② غيّر width لـ 100%</div>
+        <div class="task-chip" onclick="markTask(this)">③ جرّب max-width</div>
+      </div>
+      <div class="editor-pane">
+        <div class="pane-wrap">
+          <div class="pane-label">✏️ الكود <span>عدّل هنا</span></div>
+          <textarea class="code-editor" id="code-4" spellcheck="false" oninput="updatePreview('4')"><!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #eef4ff;
+    padding: 20px;
+    direction: rtl;
+  }
+
+  h2 {
+    font-size: 24px; /* ← كبّر الرقم */
+    color: #1a2540;
+  }
+
+  .box {
+    background: white;
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 60%; /* ← غيّر لـ 100% */
+    border-radius: 8px;
+  }
+
+  p {
+    font-size: 14px; /* ← جرّب 20px */
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .small-box {
+    background: #dceaff;
+    padding: 10px;
+    max-width: 200px; /* ← جرّب 400px */
+    border-radius: 6px;
+    margin-top: 10px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <h2>عنوان الصفحة</h2>
+  <div class="box">
+    <p>ده نص داخل صندوق — عرضه 60% من الصفحة</p>
+    <div class="small-box">صندوق صغير max 200px</div>
+  </div>
+</body>
+</html></textarea>
+          <button class="reset-btn" onclick="resetCode('4')">↺ إعادة تعيين</button>
+        </div>
+        <div class="pane-wrap">
+          <div class="pane-label">👁️ النتيجة <span>تتحدث تلقائياً</span></div>
+          <div class="preview-pane"><iframe id="preview-4"></iframe></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         5 — المسافات
+         ====================================================== -->
+    <div class="slide" data-theme="teal" data-idx="5">
       <div class="slide-inner">
         <div class="slide-label">الدرس التالت</div>
         <div class="slide-title">📏 المسافات</div>
-        <div class="slide-sub"><span class="accent-word">padding</span> من جوّا — <span class="accent-word">margin</span> من برّا</div>
+        <div class="slide-sub"><span class="accent-word">padding</span> من جوّا ← → <span class="accent-word">margin</span> من برّا</div>
 
         <div class="split">
           <div class="split-card">
             <div class="card-title">📦 padding — جوّاني</div>
-            <p>المسافة بين المحتوى وحافة العنصر من الداخل</p>
-            <code class="code-line"><span class="cp">padding</span>: <span class="cv">20px</span>;
-<span class="cp">padding-top</span>: <span class="cv">10px</span>;
-<span class="cp">padding</span>: <span class="cv">10px 20px</span>;
-<span class="cm">/* فوق/تحت | يمين/شمال */</span></code>
-            <div class="tip-box" style="margin-top:10px; max-width:100%;">
-              <p>كبّر الـ padding → العنصر يكبر بس المحتوى مش بيتحرك</p>
-            </div>
+            <p>المسافة بين المحتوى وحافة العنصر</p>
+            <code class="code-line"><span class="cp">padding</span>: <span class="cv">20px</span>;          <span class="cm">/* كل الجهات */</span>
+<span class="cp">padding</span>: <span class="cv">10px 20px</span>;    <span class="cm">/* فوق/تحت | يمين/شمال */</span>
+<span class="cp">padding-top</span>: <span class="cv">10px</span>; <span class="cm">/* جهة واحدة */</span></code>
           </div>
           <div class="split-card">
             <div class="card-title">↔ margin — برّاني</div>
             <p>المسافة بين العنصر وأي حاجة حواليه</p>
-            <code class="code-line"><span class="cp">margin</span>: <span class="cv">20px</span>;
-<span class="cp">margin-bottom</span>: <span class="cv">16px</span>;
-<span class="cp">margin</span>: <span class="cv">0 auto</span>;
-<span class="cm">/* توسيط أفقي */</span></code>
-            <div class="tip-box" style="margin-top:10px; max-width:100%;">
-              <p><code>margin: 0 auto</code> = أشهر سطر عشان توسّط أي صندوق</p>
-            </div>
+            <code class="code-line"><span class="cp">margin</span>: <span class="cv">20px</span>;            <span class="cm">/* كل الجهات */</span>
+<span class="cp">margin</span>: <span class="cv">0 auto</span>;         <span class="cm">/* توسيط أفقي ⭐ */</span>
+<span class="cp">margin-bottom</span>: <span class="cv">16px</span>; <span class="cm">/* جهة واحدة */</span></code>
           </div>
         </div>
 
-        <div class="ref-table-wrap" style="margin-top:14px;">
+        <!-- Visual explanation -->
+        <div style="margin-top:14px; width:100%; max-width:880px; opacity:0; animation: fadeUp 0.5s 0.35s forwards;" class="ba-card">
+          <div style="display:flex; align-items:center; justify-content:center; padding:10px 0;">
+            <div style="background:rgba(10,138,122,0.12); border:2px dashed var(--accent); border-radius:8px; padding:16px; font-size:12px; color:var(--muted); direction:ltr; text-align:center;">
+              <div style="background:rgba(10,138,122,0.15); border:2px solid var(--accent); border-radius:4px; padding:12px 20px; color:var(--text); font-weight:700; font-size:13px;">
+                المحتوى
+              </div>
+              <div style="margin-top:8px; font-size:11px;">← padding (جوّه الإطار)</div>
+            </div>
+            <div style="margin: 0 20px; font-size:11px; color:var(--muted); direction:rtl;">margin<br>(برّه الإطار) →</div>
+            <div style="background:#eee; border-radius:4px; padding:8px 12px; font-size:12px; color:#888;">عنصر تاني</div>
+          </div>
+        </div>
+
+        <div class="ref-table-wrap" style="margin-top:12px;">
           <table class="ref-table">
             <thead><tr><th>الخاصية</th><th>مثال</th><th>استخدام</th></tr></thead>
             <tbody>
               <tr>
                 <td><code>gap</code></td>
                 <td><code class="code-line"><span class="cp">gap</span>: <span class="cv">16px</span>;</code></td>
-                <td>المسافة بين عناصر الـ flex/grid</td>
+                <td>المسافة بين عناصر flex/grid</td>
               </tr>
               <tr>
                 <td><code>line-height</code></td>
-                <td><code class="code-line"><span class="cp">line-height</span>: <span class="cv">1.6</span>; <span class="cm">/* 1.0 ضيق | 2.0 واسع */</span></code></td>
-                <td>المسافة بين سطور النص</td>
+                <td><code class="code-line"><span class="cp">line-height</span>: <span class="cv">1.6</span>;</code></td>
+                <td>المسافة بين سطور النص — 1.6 مريح للقراءة</td>
               </tr>
             </tbody>
           </table>
@@ -1136,21 +927,102 @@ code {
       </div>
     </div>
 
-    <!-- ===================================================
-         SLIDE 4 — النص والخط
-         =================================================== -->
-    <div class="slide" data-theme="plum" data-idx="4">
+    <!-- ======================================================
+         6 — تجربة المسافات LIVE
+         ====================================================== -->
+    <div class="slide editor-slide" data-theme="teal" data-idx="6">
+      <div class="editor-header">
+        <div class="editor-title">📏 جرّب المسافات بنفسك</div>
+        <div class="editor-badge">LIVE EDITOR</div>
+      </div>
+      <div class="editor-desc">لاحظ الفرق بين padding وmargin — هما مش نفس الحاجة!</div>
+      <div class="editor-tasks" id="tasks-6">
+        <div class="task-chip" onclick="markTask(this)">① كبّر الـ padding</div>
+        <div class="task-chip" onclick="markTask(this)">② جرّب margin: 0 auto</div>
+        <div class="task-chip" onclick="markTask(this)">③ غيّر line-height</div>
+      </div>
+      <div class="editor-pane">
+        <div class="pane-wrap">
+          <div class="pane-label">✏️ الكود <span>عدّل هنا</span></div>
+          <textarea class="code-editor" id="code-6" spellcheck="false" oninput="updatePreview('6')"><!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background: #edfaf8;
+    font-family: Arial;
+    direction: rtl;
+    padding: 20px;
+  }
+
+  .card {
+    background: white;
+    border: 2px solid #0a8a7a;
+    border-radius: 8px;
+    padding: 10px; /* ← كبّر لـ 40px وشوف */
+    margin: 5px;   /* ← جرّب margin: 20px auto */
+    max-width: 400px;
+  }
+
+  p {
+    color: #333;
+    line-height: 1.2; /* ← جرّب 2.0 */
+    font-size: 14px;
+  }
+
+  .gap-example {
+    display: flex;
+    gap: 4px; /* ← كبّر لـ 20px */
+    margin-top: 10px;
+  }
+
+  .tag {
+    background: #edfaf8;
+    border: 1px solid #0a8a7a;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #0a8a7a;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h3>مثال padding وmargin</h3>
+    <p>لاحظ إزاي الـ padding بيحرك المحتوى من جوّه
+والـ margin بيحرك الكارت نفسه من برّه.</p>
+    <div class="gap-example">
+      <div class="tag">HTML</div>
+      <div class="tag">CSS</div>
+      <div class="tag">JS</div>
+    </div>
+  </div>
+</body>
+</html></textarea>
+          <button class="reset-btn" onclick="resetCode('6')">↺ إعادة تعيين</button>
+        </div>
+        <div class="pane-wrap">
+          <div class="pane-label">👁️ النتيجة <span>تتحدث تلقائياً</span></div>
+          <div class="preview-pane"><iframe id="preview-6"></iframe></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         7 — النص والخط
+         ====================================================== -->
+    <div class="slide" data-theme="plum" data-idx="7">
       <div class="slide-inner">
         <div class="slide-label">الدرس الرابع</div>
         <div class="slide-title">✍️ النص والخط</div>
-        <div class="slide-sub">كل حاجة بتتحكم في شكل الكلام في الصفحة</div>
+        <div class="slide-sub">كل حاجة بتتحكم في شكل الكلام على الصفحة</div>
 
         <div class="list-rows">
           <div class="list-row">
             <div class="row-num">01</div>
             <div class="row-main">
               <div class="row-title">font-family — نوع الخط</div>
-              <div class="row-desc">بيحدد شكل الحروف نفسها</div>
+              <div class="row-desc">بيحدد شكل الحروف — Arial / Georgia / وغيرهم</div>
             </div>
             <div class="row-code">font-family: Arial, sans-serif;</div>
           </div>
@@ -1158,7 +1030,7 @@ code {
             <div class="row-num">02</div>
             <div class="row-main">
               <div class="row-title">font-weight — سُمك الخط</div>
-              <div class="row-desc">normal / bold / أرقام من 100 لـ 900</div>
+              <div class="row-desc">normal=عادي / bold=سميك / 100 لـ 900</div>
             </div>
             <div class="row-code">font-weight: 700;</div>
           </div>
@@ -1166,144 +1038,217 @@ code {
             <div class="row-num">03</div>
             <div class="row-main">
               <div class="row-title">text-align — محاذاة</div>
-              <div class="row-desc">right / center / left</div>
+              <div class="row-desc">right=يمين / center=وسط / left=شمال</div>
             </div>
             <div class="row-code">text-align: center;</div>
           </div>
           <div class="list-row">
             <div class="row-num">04</div>
             <div class="row-main">
-              <div class="row-title">text-decoration — خط تحت</div>
-              <div class="row-desc">شيل السطر من اللينك أو حطّه</div>
+              <div class="row-title">text-decoration — زينة النص</div>
+              <div class="row-desc">none=شيل السطر من اللينك / underline=حط سطر</div>
             </div>
             <div class="row-code">text-decoration: none;</div>
           </div>
           <div class="list-row">
             <div class="row-num">05</div>
             <div class="row-main">
-              <div class="row-title">letter-spacing — مسافة الحروف</div>
+              <div class="row-title">letter-spacing — مسافة بين الحروف</div>
               <div class="row-desc">للعناوين المكتوبة بخط رفيع</div>
             </div>
             <div class="row-code">letter-spacing: 0.1em;</div>
           </div>
         </div>
+
+        <div class="real-world">
+          <div class="real-world-label">🌍 في الحياة الحقيقية</div>
+          <p>اللينكات في HTML ليها سطر تحتها تلقائياً — أي موقع بيشيله بـ <code>text-decoration: none</code> ويحط لون مختلف بدله. لو شفت لينك من غير سطر — دور على ده في CSS.</p>
+        </div>
       </div>
     </div>
 
-    <!-- ===================================================
-         SLIDE 5 — الإطار والزوايا
-         =================================================== -->
-    <div class="slide" data-theme="amber" data-idx="5">
+    <!-- ======================================================
+         8 — الإطار والزوايا LIVE
+         ====================================================== -->
+    <div class="slide editor-slide" data-theme="amber" data-idx="8">
+      <div class="editor-header">
+        <div class="editor-title">🔲 الإطار والزوايا — جرّب</div>
+        <div class="editor-badge">LIVE EDITOR</div>
+      </div>
+      <div class="editor-desc">border وborder-radius وbox-shadow — جرّب كل واحدة وشوف الفرق</div>
+      <div class="editor-tasks" id="tasks-8">
+        <div class="task-chip" onclick="markTask(this)">① غيّر border-radius</div>
+        <div class="task-chip" onclick="markTask(this)">② جرّب dashed</div>
+        <div class="task-chip" onclick="markTask(this)">③ كبّر الـ shadow</div>
+      </div>
+      <div class="editor-pane">
+        <div class="pane-wrap">
+          <div class="pane-label">✏️ الكود <span>عدّل هنا</span></div>
+          <textarea class="code-editor" id="code-8" spellcheck="false" oninput="updatePreview('8')"><!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background: #fff8ee;
+    font-family: Arial;
+    direction: rtl;
+    padding: 30px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    background: white;
+    border: 2px solid #b86a00; /* solid→dashed→dotted */
+    border-radius: 8px; /* ← جرّب 0 أو 50px */
+    padding: 20px;
+    width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    /* ← كبّر الـ shadow: 0 8px 24px rgba(0,0,0,0.2) */
+    text-align: center;
+  }
+
+  .circle {
+    background: #b86a00;
+    border-radius: 50%; /* ← شيل ده وهيبقى مربع */
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+  }
+
+  .border-bottom-only {
+    border: none;
+    border-bottom: 3px solid #b86a00;
+    padding: 12px 0;
+    font-size: 14px;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="circle"></div>
+    <p>كارت بإطار دايري</p>
+  </div>
+  <div>
+    <p class="border-bottom-only">إطار من تحت بس</p>
+    <p class="border-bottom-only">سطر تاني</p>
+    <p class="border-bottom-only">سطر تالت</p>
+  </div>
+</body>
+</html></textarea>
+          <button class="reset-btn" onclick="resetCode('8')">↺ إعادة تعيين</button>
+        </div>
+        <div class="pane-wrap">
+          <div class="pane-label">👁️ النتيجة <span>تتحدث تلقائياً</span></div>
+          <div class="preview-pane"><iframe id="preview-8"></iframe></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         9 — الترتيب / Layout LIVE
+         ====================================================== -->
+    <div class="slide editor-slide" data-theme="green" data-idx="9">
+      <div class="editor-header">
+        <div class="editor-title">📦 Flexbox وGrid — جرّب</div>
+        <div class="editor-badge">LIVE EDITOR</div>
+      </div>
+      <div class="editor-desc">أهم درس في CSS — إزاي العناصر بتتوزع جنب بعض أو في شبكة</div>
+      <div class="editor-tasks" id="tasks-9">
+        <div class="task-chip" onclick="markTask(this)">① غيّر flex-direction</div>
+        <div class="task-chip" onclick="markTask(this)">② جرّب justify-content</div>
+        <div class="task-chip" onclick="markTask(this)">③ غيّر الـ grid لـ 3 أعمدة</div>
+      </div>
+      <div class="editor-pane">
+        <div class="pane-wrap">
+          <div class="pane-label">✏️ الكود <span>عدّل هنا</span></div>
+          <textarea class="code-editor" id="code-9" spellcheck="false" oninput="updatePreview('9')"><!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background: #edf8f3;
+    font-family: Arial;
+    padding: 16px;
+    direction: rtl;
+  }
+
+  /* FLEXBOX */
+  .flex-row {
+    display: flex;
+    flex-direction: row; /* ← جرّب column */
+    justify-content: space-between; /* ← center / flex-end */
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid #0e8a5a;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .flex-item {
+    background: #0e8a5a;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* ← جرّب 1fr 1fr 1fr */
+    gap: 10px;
+  }
+
+  .grid-cell {
+    background: white;
+    border: 1px solid #0e8a5a;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    font-size: 13px;
+    color: #0d2b1e;
+  }
+</style>
+</head>
+<body>
+  <p style="font-size:12px; color:#888; margin-bottom:8px;">Flexbox:</p>
+  <div class="flex-row">
+    <div class="flex-item">عنصر ١</div>
+    <div class="flex-item">عنصر ٢</div>
+    <div class="flex-item">عنصر ٣</div>
+  </div>
+
+  <p style="font-size:12px; color:#888; margin-bottom:8px;">Grid (2 أعمدة):</p>
+  <div class="grid">
+    <div class="grid-cell">خلية ١</div>
+    <div class="grid-cell">خلية ٢</div>
+    <div class="grid-cell">خلية ٣</div>
+    <div class="grid-cell">خلية ٤</div>
+  </div>
+</body>
+</html></textarea>
+          <button class="reset-btn" onclick="resetCode('9')">↺ إعادة تعيين</button>
+        </div>
+        <div class="pane-wrap">
+          <div class="pane-label">👁️ النتيجة <span>تتحدث تلقائياً</span></div>
+          <div class="preview-pane"><iframe id="preview-9"></iframe></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         10 — تاجات HTML
+         ====================================================== -->
+    <div class="slide" data-theme="stone" data-idx="10">
       <div class="slide-inner">
         <div class="slide-label">الدرس الخامس</div>
-        <div class="slide-title">🔲 الإطار والزوايا</div>
-        <div class="slide-sub">الخط اللي حوالين العنصر والزوايا الدايرية</div>
-
-        <div class="ref-table-wrap">
-          <table class="ref-table">
-            <thead>
-              <tr><th style="width:22%">الخاصية</th><th style="width:40%">مثال</th><th>بتعمل إيه</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>border</code></td>
-                <td><code class="code-line"><span class="cp">border</span>: <span class="cv">1px solid #ccc</span>;
-<span class="cm">/* السُمك | النوع | اللون */</span>
-<span class="cp">border</span>: <span class="cv">none</span>; <span class="cm">/* شيل الإطار */</span></code></td>
-                <td>إطار حوالين العنصر<br><small>solid=خط / dashed=متقطع / dotted=نقط</small></td>
-              </tr>
-              <tr>
-                <td><code>border-radius</code></td>
-                <td><code class="code-line"><span class="cp">border-radius</span>: <span class="cv">4px</span>;  <span class="cm">/* شوية */</span>
-<span class="cp">border-radius</span>: <span class="cv">12px</span>; <span class="cm">/* أكتر */</span>
-<span class="cp">border-radius</span>: <span class="cv">50%</span>;  <span class="cm">/* دايرة */</span></code></td>
-                <td>تدوير الزوايا — 0=حادة / 50%=دايرة كاملة</td>
-              </tr>
-              <tr>
-                <td><code>border-bottom</code></td>
-                <td><code class="code-line"><span class="cp">border-bottom</span>: <span class="cv">2px solid #333</span>;</code></td>
-                <td>إطار من جهة واحدة بس<br><small>border-top / left / right / bottom</small></td>
-              </tr>
-              <tr>
-                <td><code>box-shadow</code></td>
-                <td><code class="code-line"><span class="cp">box-shadow</span>: <span class="cv">0 2px 8px rgba(0,0,0,0.15)</span>;
-<span class="cm">/* x  y  blur  لون+شفافية */</span></code></td>
-                <td>ظل تحت أو حوالين العنصر</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="tip-box">
-          <p><strong>نصيحة:</strong> لما بتشوف عنصر مستدير زوايا في أي موقع — دور على <code>border-radius</code> في CSS وغيّر الرقم</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===================================================
-         SLIDE 6 — الترتيب / Layout
-         =================================================== -->
-    <div class="slide" data-theme="green" data-idx="6">
-      <div class="slide-inner">
-        <div class="slide-label">الدرس السادس</div>
-        <div class="slide-title">📦 الترتيب</div>
-        <div class="slide-sub">إزاي العناصر بتتوزع جنب بعض — <span class="accent-word">Flexbox</span> هو الأكتر استخداماً</div>
-
-        <div class="split">
-          <div class="split-card">
-            <div class="card-title">Flexbox — جنب بعض</div>
-            <code class="code-line"><span class="cp">display</span>: <span class="cv">flex</span>;
-<span class="cp">flex-direction</span>: <span class="cv">row</span>;
-<span class="cm">/* جنب بعض (افتراضي) */</span>
-<span class="cp">flex-direction</span>: <span class="cv">column</span>;
-<span class="cm">/* فوق بعض */</span>
-<span class="cp">justify-content</span>: <span class="cv">center</span>;
-<span class="cp">align-items</span>: <span class="cv">center</span>;</code>
-          </div>
-          <div class="split-card">
-            <div class="card-title">Grid — شبكة</div>
-            <code class="code-line"><span class="cp">display</span>: <span class="cv">grid</span>;
-<span class="cp">grid-template-columns</span>:
-  <span class="cv">1fr 1fr</span>;   <span class="cm">/* عمودين */</span>
-  <span class="cv">1fr 1fr 1fr</span>; <span class="cm">/* 3 أعمدة */</span>
-<span class="cp">gap</span>: <span class="cv">16px</span>;
-<span class="cm">/* مسافة بين الخلايا */</span></code>
-          </div>
-        </div>
-
-        <div class="ref-table-wrap" style="margin-top:14px;">
-          <table class="ref-table">
-            <thead><tr><th>الخاصية</th><th>القيم</th><th>بتعمل إيه</th></tr></thead>
-            <tbody>
-              <tr>
-                <td><code>justify-content</code></td>
-                <td><code>center</code> / <code>space-between</code> / <code>flex-end</code></td>
-                <td>توزيع عناصر الـ flex أفقياً</td>
-              </tr>
-              <tr>
-                <td><code>align-items</code></td>
-                <td><code>center</code> / <code>flex-start</code> / <code>stretch</code></td>
-                <td>محاذاة عناصر الـ flex رأسياً</td>
-              </tr>
-              <tr>
-                <td><code>position</code></td>
-                <td><code>relative</code> / <code>absolute</code> / <code>fixed</code></td>
-                <td>طريقة تموضع العنصر — absolute فوق كل حاجة</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===================================================
-         SLIDE 7 — تاجات HTML
-         =================================================== -->
-    <div class="slide" data-theme="stone" data-idx="7">
-      <div class="slide-inner">
-        <div class="slide-label">الدرس السابع</div>
         <div class="slide-title">🏷️ تاجات HTML</div>
-        <div class="slide-sub">الهيكل — كل عنصر على الصفحة جاي من تاجة من دول</div>
+        <div class="slide-sub">كل عنصر على الصفحة جاي من تاجة — دي الأساسية</div>
 
         <div class="list-rows">
           <div class="list-row">
@@ -1317,16 +1262,16 @@ code {
           <div class="list-row">
             <div class="row-num">h1-h6</div>
             <div class="row-main">
-              <div class="row-title">عناوين — h1 الأكبر</div>
-              <div class="row-desc">h1 واحدة بس في الصفحة عادةً</div>
+              <div class="row-title">عناوين — h1 الأكبر والأهم</div>
+              <div class="row-desc">h1 واحدة بس في الصفحة — محركات البحث بتقرأها</div>
             </div>
             <div class="row-code">&lt;h2&gt;عنوان فرعي&lt;/h2&gt;</div>
           </div>
           <div class="list-row">
             <div class="row-num">p</div>
             <div class="row-main">
-              <div class="row-title">فقرة نص</div>
-              <div class="row-desc">النص الطويل العادي</div>
+              <div class="row-title">فقرة نص عادية</div>
+              <div class="row-desc">للنص الطويل — بياخد سطر كامل</div>
             </div>
             <div class="row-code">&lt;p&gt;نص هنا&lt;/p&gt;</div>
           </div>
@@ -1336,337 +1281,454 @@ code {
               <div class="row-title">لينك — href هو الرابط</div>
               <div class="row-desc">target="_blank" يفتح في تاب جديد</div>
             </div>
-            <div class="row-code">&lt;a href="..."&gt;</div>
+            <div class="row-code">&lt;a href="https://..."&gt;</div>
           </div>
           <div class="list-row">
-            <div class="row-num">button</div>
+            <div class="row-num">img</div>
             <div class="row-main">
-              <div class="row-title">زر — onclick بيحدد الوظيفة</div>
-              <div class="row-desc">بيستدعي JavaScript function</div>
+              <div class="row-title">صورة — src=المسار / alt=وصف</div>
+              <div class="row-desc">alt مهم للـ SEO ولو الصورة مش ظهرت</div>
             </div>
-            <div class="row-code">&lt;button onclick="fn()"&gt;</div>
+            <div class="row-code">&lt;img src="photo.jpg" alt="وصف"&gt;</div>
           </div>
           <div class="list-row">
             <div class="row-num">input</div>
             <div class="row-main">
               <div class="row-title">خانة إدخال — type بيحدد النوع</div>
-              <div class="row-desc">text / number / email / password</div>
+              <div class="row-desc">text / email / password / number</div>
             </div>
-            <div class="row-code">&lt;input type="text"&gt;</div>
+            <div class="row-code">&lt;input type="email"&gt;</div>
           </div>
+        </div>
+
+        <div class="tip-box">
+          <p><strong>Semantic HTML:</strong> في تاجات زي <code>&lt;nav&gt;</code> و<code>&lt;section&gt;</code> و<code>&lt;article&gt;</code> — معناها واضح للمتصفح ومحركات البحث. استخدمها بدل <code>&lt;div&gt;</code> لما ينفع.</p>
         </div>
       </div>
     </div>
 
-    <!-- ===================================================
-         SLIDE 8 — CSS Selectors
-         =================================================== -->
-    <div class="slide" data-theme="sand" data-idx="8">
+    <!-- ======================================================
+         11 — CSS Selectors + Specificity
+         ====================================================== -->
+    <div class="slide" data-theme="sand" data-idx="11">
       <div class="slide-inner">
-        <div class="slide-label">الدرس التامن</div>
-        <div class="slide-title">🎯 CSS Selectors</div>
-        <div class="slide-sub">إزاي CSS بتقول "العنصر ده بالظبط اللي عايز أغيره"</div>
+        <div class="slide-label">الدرس السادس</div>
+        <div class="slide-title">🎯 Selectors وSpecificity</div>
+        <div class="slide-sub">إزاي CSS بتختار العنصر — وليه أحياناً الكود مش بيتطبق!</div>
 
         <div class="ref-table-wrap">
           <table class="ref-table">
-            <thead>
-              <tr>
-                <th style="width:18%">النوع</th>
-                <th style="width:30%">في CSS</th>
-                <th style="width:28%">في HTML</th>
-                <th>معناه</th>
-              </tr>
-            </thead>
+            <thead><tr><th style="width:14%">النوع</th><th style="width:28%">CSS</th><th style="width:26%">HTML</th><th style="width:12%">قوة</th><th>معناه</th></tr></thead>
             <tbody>
               <tr>
                 <td>التاجة</td>
                 <td><code class="code-line"><span class="ct">h1</span> { <span class="cp">color</span>: <span class="cv">blue</span>; }</code></td>
-                <td><code class="code-line"><span class="ct">&lt;h1&gt;</span>عنوان<span class="ct">&lt;/h1&gt;</span></code></td>
-                <td>كل الـ h1 في الصفحة</td>
+                <td><code>&lt;h1&gt;نص&lt;/h1&gt;</code></td>
+                <td><span style="color:#888">1</span></td>
+                <td>كل الـ h1</td>
               </tr>
               <tr>
-                <td>.class <span class="example-pill">الأكتر</span></td>
+                <td>.class <span class="example-pill">الأشيع</span></td>
                 <td><code class="code-line"><span class="ct">.card</span> { <span class="cp">background</span>: <span class="cv">#fff</span>; }</code></td>
-                <td><code class="code-line"><span class="ct">&lt;div</span> <span class="ca">class</span>=<span class="cs">"card"</span><span class="ct">&gt;</span></code></td>
-                <td>نقطة . + الاسم في CSS</td>
+                <td><code>class="card"</code></td>
+                <td><span style="color:var(--accent); font-weight:700">10</span></td>
+                <td>نقطة + الاسم</td>
               </tr>
               <tr>
                 <td>#id</td>
                 <td><code class="code-line"><span class="ct">#header</span> { <span class="cp">height</span>: <span class="cv">60px</span>; }</code></td>
-                <td><code class="code-line"><span class="ct">&lt;div</span> <span class="ca">id</span>=<span class="cs">"header"</span><span class="ct">&gt;</span></code></td>
-                <td>هاش # — عنصر واحد بس</td>
+                <td><code>id="header"</code></td>
+                <td><span style="color:#c4285c; font-weight:700">100</span></td>
+                <td>هاش # — واحد بس</td>
               </tr>
               <tr>
                 <td>:hover</td>
-                <td><code class="code-line"><span class="ct">.btn:hover</span> { <span class="cp">background</span>: <span class="cv">#333</span>; }</code></td>
+                <td><code class="code-line"><span class="ct">.btn:hover</span> { <span class="cp">opacity</span>: <span class="cv">0.8</span>; }</code></td>
                 <td>—</td>
-                <td>لما الماوس يبقى فوق العنصر</td>
+                <td><span style="color:var(--accent); font-weight:700">10</span></td>
+                <td>لما الماوس فوقه</td>
               </tr>
               <tr>
                 <td>جوّا بعض</td>
                 <td><code class="code-line"><span class="ct">.card p</span> { <span class="cp">color</span>: <span class="cv">gray</span>; }</code></td>
                 <td>—</td>
-                <td>كل &lt;p&gt; جوّا .card</td>
+                <td><span style="color:var(--accent); font-weight:700">11</span></td>
+                <td>كل p جوّا .card</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="tip-box">
-          <p><strong>القاعدة:</strong> اسم الـ <code>class</code> في HTML بيطابق <code>.اسم</code> في CSS تماماً — لو غيّرت الاسم في واحدة اتغيّر في التانية</p>
+        <div class="before-after" style="margin-top:12px;">
+          <div class="ba-card">
+            <div class="ba-label before">❓ ليه الكود مش بيتطبق؟</div>
+            <div style="font-size:12px; font-family:monospace; direction:ltr; line-height:1.8; color:#555;">p { color: red; }
+/* قوة = 1 */
+
+#main p { color: blue; }
+/* قوة = 101 — بيكسب! */</div>
+          </div>
+          <div class="ba-card">
+            <div class="ba-label after">✅ القاعدة</div>
+            <div style="font-size:12.5px; color:#555; line-height:1.7; direction:rtl;">
+              الـ ID أقوى من الـ class، والـ class أقوى من التاجة.<br>
+              لو كتبت خاصية وهي مش بتتطبق — على الأغلب في selector تاني أقوى منه بيكتب فوقه.
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ===================================================
-         SLIDE 9 — الإخفاء والظهور
-         =================================================== -->
-    <div class="slide" data-theme="blue" data-idx="9">
-      <div class="slide-inner">
-        <div class="slide-label">الدرس التاسع</div>
-        <div class="slide-title">👁️ الإخفاء والظهور</div>
-        <div class="slide-sub">3 طرق مختلفة تخلي حاجة تختفي — لكل واحدة لها استخدام</div>
+    <!-- ======================================================
+         12 — CSS Variables + Responsive
+         ====================================================== -->
+    <div class="slide editor-slide" data-theme="indigo" data-idx="12">
+      <div class="editor-header">
+        <div class="editor-title">⚡ CSS Variables و@media</div>
+        <div class="editor-badge">LIVE EDITOR</div>
+      </div>
+      <div class="editor-desc">CSS Variables = بتعرّف اللون مرة واحدة وبتستخدمه في كل حتة — غيّره في مكان واحد بس</div>
+      <div class="editor-tasks" id="tasks-12">
+        <div class="task-chip" onclick="markTask(this)">① غيّر --main-color</div>
+        <div class="task-chip" onclick="markTask(this)">② غيّر --font-size</div>
+        <div class="task-chip" onclick="markTask(this)">③ لاحظ الـ @media</div>
+      </div>
+      <div class="editor-pane">
+        <div class="pane-wrap">
+          <div class="pane-label">✏️ الكود <span>عدّل هنا</span></div>
+          <textarea class="code-editor" id="code-12" spellcheck="false" oninput="updatePreview('12')"><!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* CSS Variables — عرّف مرة استخدم في كل حتة */
+  :root {
+    --main-color: #3730a3; /* ← غيّر اللون هنا بس */
+    --font-size: 15px;     /* ← غيّر الحجم هنا بس */
+    --radius: 10px;
+  }
 
-        <div class="ref-table-wrap">
-          <table class="ref-table">
-            <thead>
-              <tr><th style="width:25%">الخاصية</th><th style="width:30%">مثال</th><th>الفرق</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>display: none</code></td>
-                <td><code class="code-line"><span class="cp">display</span>: <span class="cv">none</span>;</code></td>
-                <td>مخفي تماماً — مش بياخد مساحة — JavaScript بتستخدمه الأكتر</td>
-              </tr>
-              <tr>
-                <td><code>display: block</code></td>
-                <td><code class="code-line"><span class="cp">display</span>: <span class="cv">block</span>;</code></td>
-                <td>يظهر تاني — عكس none</td>
-              </tr>
-              <tr>
-                <td><code>opacity: 0</code></td>
-                <td><code class="code-line"><span class="cp">opacity</span>: <span class="cv">0</span>;   <span class="cm">/* شفاف */</span>
-<span class="cp">opacity</span>: <span class="cv">0.5</span>; <span class="cm">/* نص شفافية */</span>
-<span class="cp">opacity</span>: <span class="cv">1</span>;   <span class="cm">/* واضح */</span></code></td>
-                <td>شفاف بس لا يزال بياخد مساحته</td>
-              </tr>
-              <tr>
-                <td><code>visibility: hidden</code></td>
-                <td><code class="code-line"><span class="cp">visibility</span>: <span class="cv">hidden</span>;</code></td>
-                <td>مخفي بس المساحة فاضية — نادر الاستخدام</td>
-              </tr>
-              <tr>
-                <td><code>overflow</code></td>
-                <td><code class="code-line"><span class="cp">overflow</span>: <span class="cv">hidden</span>; <span class="cm">/* اقطع الزيادة */</span>
-<span class="cp">overflow</span>: <span class="cv">scroll</span>; <span class="cm">/* اعمل scroll */</span></code></td>
-                <td>إيه اللي يحصل لو المحتوى أكبر من العنصر</td>
-              </tr>
-              <tr>
-                <td><code>transition</code></td>
-                <td><code class="code-line"><span class="cp">transition</span>: <span class="cv">all 0.3s ease</span>;</code></td>
-                <td>انيميشن ناعم لما أي خاصية تتغير</td>
-              </tr>
-            </tbody>
-          </table>
+  body {
+    font-family: Arial;
+    background: #eef2ff;
+    padding: 20px;
+    direction: rtl;
+  }
+
+  h2 {
+    color: var(--main-color); /* بيستخدم المتغير */
+    font-size: calc(var(--font-size) + 8px);
+  }
+
+  .btn {
+    background: var(--main-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: var(--font-size);
+    cursor: pointer;
+  }
+
+  .card {
+    background: white;
+    border: 2px solid var(--main-color);
+    border-radius: var(--radius);
+    padding: 20px;
+    max-width: 500px;
+  }
+
+  /* Responsive — لما الشاشة صغيرة */
+  @media (max-width: 400px) {
+    h2 { font-size: 18px; }
+    .card { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h2>CSS Variables 🎨</h2>
+    <p style="font-size: var(--font-size); color: #555; line-height: 1.6;">
+      غيّر --main-color فوق وشوف كل العناصر اتغيرت دفعة واحدة!
+    </p>
+    <button class="btn">زر رئيسي</button>
+  </div>
+</body>
+</html></textarea>
+          <button class="reset-btn" onclick="resetCode('12')">↺ إعادة تعيين</button>
+        </div>
+        <div class="pane-wrap">
+          <div class="pane-label">👁️ النتيجة <span>تتحدث تلقائياً</span></div>
+          <div class="preview-pane"><iframe id="preview-12"></iframe></div>
         </div>
       </div>
     </div>
 
-    <!-- ===================================================
-         SLIDE 10 — 🔍 لو مش لاقي الخاصية
-         =================================================== -->
-    <div class="slide" data-theme="teal" data-idx="10">
+    <!-- ======================================================
+         13 — الإخفاء والظهور + transition LIVE
+         ====================================================== -->
+    <div class="slide editor-slide" data-theme="cyan" data-idx="13">
+      <div class="editor-header">
+        <div class="editor-title">👁️ الإخفاء والانيميشن</div>
+        <div class="editor-badge">LIVE EDITOR</div>
+      </div>
+      <div class="editor-desc">display:none / opacity / transition — جرّب وشوف الفرق بينهم</div>
+      <div class="editor-tasks" id="tasks-13">
+        <div class="task-chip" onclick="markTask(this)">① شيل display:none</div>
+        <div class="task-chip" onclick="markTask(this)">② غيّر الـ transition</div>
+        <div class="task-chip" onclick="markTask(this)">③ جرّب opacity: 0.3</div>
+      </div>
+      <div class="editor-pane">
+        <div class="pane-wrap">
+          <div class="pane-label">✏️ الكود <span>عدّل هنا</span></div>
+          <textarea class="code-editor" id="code-13" spellcheck="false" oninput="updatePreview('13')"><!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial;
+    background: #ecfeff;
+    padding: 20px;
+    direction: rtl;
+  }
+
+  .hidden-box {
+    background: #0369a1;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: none; /* ← شيل السطر ده وهيظهر */
+  }
+
+  .faded-box {
+    background: #0284c7;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    opacity: 0.3; /* ← غيّر لـ 1 */
+  }
+
+  .hover-btn {
+    background: #0369a1;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* ← جرّب: transition: all 1s ease */
+  }
+
+  .hover-btn:hover {
+    background: #0284c7;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(3,105,161,0.4);
+  }
+</style>
+</head>
+<body>
+  <div class="hidden-box">
+    ده مخفي بـ display:none — شيل السطر وهيظهر
+  </div>
+
+  <div class="faded-box">
+    ده شفاف بـ opacity: 0.3 — غيّره لـ 1
+  </div>
+
+  <button class="hover-btn">اعمل hover عليّا ✨</button>
+</body>
+</html></textarea>
+          <button class="reset-btn" onclick="resetCode('13')">↺ إعادة تعيين</button>
+        </div>
+        <div class="pane-wrap">
+          <div class="pane-label">👁️ النتيجة <span>تتحدث تلقائياً</span></div>
+          <div class="preview-pane"><iframe id="preview-13"></iframe></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         14 — دليل البحث
+         ====================================================== -->
+    <div class="slide" data-theme="teal" data-idx="14">
       <div class="slide-inner">
         <div class="slide-label">دليل البحث</div>
         <div class="slide-title">🔍 مش لاقيها؟</div>
-        <div class="slide-sub">اتبع الخطوات دي بالترتيب — بتحل 95% من المشاكل</div>
+        <div class="slide-sub">5 خطوات بتحل 95% من المشاكل</div>
 
         <div class="list-rows">
           <div class="list-row">
             <div class="row-num">1</div>
             <div class="row-main">
               <div class="row-title">Ctrl + F في VS Code</div>
-              <div class="row-desc">ابحث باسم الخاصية اللي عايز تغيّرها مباشرة</div>
+              <div class="row-desc">ابحث باسم الخاصية مباشرة داخل الملف</div>
             </div>
             <div class="row-code">ابحث: background-color</div>
           </div>
           <div class="list-row">
             <div class="row-num">2</div>
             <div class="row-main">
-              <div class="row-title">F12 في المتصفح — Inspect</div>
-              <div class="row-desc">فوّت على أي عنصر → Inspect → شوف الـ CSS في الشمال</div>
+              <div class="row-title">F12 في المتصفح — DevTools</div>
+              <div class="row-desc">فوّت على أي عنصر → كليك يمين → Inspect → شوف الـ Styles</div>
             </div>
             <div class="row-code">F12 → Elements → Styles</div>
           </div>
           <div class="list-row">
             <div class="row-num">3</div>
             <div class="row-main">
-              <div class="row-title">الخاصية موجودة بس في الأب</div>
-              <div class="row-desc">دور على اسم الـ class أو التاجة في CSS وهتلاقيها فوق</div>
+              <div class="row-title">Specificity — في selector أقوى</div>
+              <div class="row-desc">لو كتبت خاصية ومش بتتطبق — في #id أو !important بيكتب فوقها</div>
             </div>
-            <div class="row-code">دور على: .parent { }</div>
+            <div class="row-code">دور على: #id { } أو !important</div>
           </div>
           <div class="list-row">
             <div class="row-num">4</div>
             <div class="row-main">
-              <div class="row-title">مش عارف اسمها — ابحث Google</div>
-              <div class="row-desc">اكتب: css how to change [اللي عايزه] بالإنجليزي</div>
+              <div class="row-title">Google بالإنجليزي</div>
+              <div class="row-desc">اكتب: css how to [اللي عايزه]</div>
             </div>
-            <div class="row-code">css how to center text</div>
+            <div class="row-code">css how to center a div</div>
           </div>
           <div class="list-row">
             <div class="row-num">5</div>
             <div class="row-main">
               <div class="row-title">عدّل مباشرة في DevTools</div>
-              <div class="row-desc">في الـ Styles panel → اكتب خاصية جديدة → اتفرج على التأثير فوراً</div>
+              <div class="row-desc">في Styles panel → اكتب خاصية جديدة → شوف التأثير فوراً من غير ما تسيف</div>
             </div>
-            <div class="row-code">بدون ما تسيف الملف</div>
+            <div class="row-code">مباشرة في المتصفح</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ===================================================
-         SLIDE 11 — 🧪 تطبيق عملي
-         =================================================== -->
-    <div class="slide" data-theme="rose" data-idx="11">
+    <!-- ======================================================
+         15 — QUIZ
+         ====================================================== -->
+    <div class="slide" data-theme="plum" data-idx="15">
+      <div class="slide-inner" style="justify-content:center;">
+        <div class="slide-label">اختبار سريع</div>
+        <div class="slide-title">🧠 جرّب فاهم قد إيه</div>
+        <div class="slide-sub">سؤالين بس — بدون ضغط</div>
+
+        <div class="quiz-wrap">
+          <div id="q1-wrap">
+            <div class="quiz-q">١. إيه الخاصية اللي بتغير لون النص نفسه؟</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" onclick="answer(this,'wrong','q1')"><span class="opt-icon">🔲</span> background-color</div>
+              <div class="quiz-opt" onclick="answer(this,'correct','q1')"><span class="opt-icon">🔲</span> color</div>
+              <div class="quiz-opt" onclick="answer(this,'wrong','q1')"><span class="opt-icon">🔲</span> border-color</div>
+            </div>
+            <div class="quiz-feedback ok" id="q1-ok">✅ صح! <code>color</code> بتغير لون النص — <code>background-color</code> بتغير الخلفية.</div>
+            <div class="quiz-feedback no" id="q1-no">❌ مش كده — <code>color</code> هي اللي بتغير لون النص. <code>background-color</code> هي للخلفية.</div>
+          </div>
+
+          <div id="q2-wrap" style="margin-top:24px; display:none;">
+            <div class="quiz-q">٢. عايز توسّط صندوق أفقياً — إيه الـ CSS؟</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" onclick="answer(this,'wrong','q2')"><span class="opt-icon">🔲</span> <code>padding: 0 auto</code></div>
+              <div class="quiz-opt" onclick="answer(this,'correct','q2')"><span class="opt-icon">🔲</span> <code>margin: 0 auto</code></div>
+              <div class="quiz-opt" onclick="answer(this,'wrong','q2')"><span class="opt-icon">🔲</span> <code>text-align: center</code></div>
+            </div>
+            <div class="quiz-feedback ok" id="q2-ok">✅ صح! <code>margin: 0 auto</code> مع <code>width</code> محددة = توسيط الصندوق أفقياً.</div>
+            <div class="quiz-feedback no" id="q2-no">❌ مش كده — <code>margin: 0 auto</code> هو الصح. text-align للنص بس مش للصناديق.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         16 — CHEAT SHEET
+         ====================================================== -->
+    <div class="slide" data-theme="blue" data-idx="16">
       <div class="slide-inner">
-        <div class="slide-label">وقت التطبيق</div>
-        <div class="slide-title">🧪 جرّب بنفسك</div>
-        <div class="slide-sub">خد الكود ده، افتحه في VS Code، ونفّذ المهام الأربعة</div>
+        <div class="slide-label">المرجع السريع</div>
+        <div class="slide-title">📋 Cheat Sheet</div>
+        <div class="slide-sub">احفظ الصفحة دي — الخصائص الأكتر استخداماً في مكان واحد</div>
 
-        <div class="practice-wrap">
-          <div class="tasks-grid">
-            <div class="task-card" onclick="toggleTask(this)">
-              <div class="task-num">01</div>
-              <div class="task-title">غيّر لون العنوان</div>
-              <div class="task-desc">دور على <code>color:</code> جوه <code>h1</code> وغيّر الكود السداسي</div>
-            </div>
-            <div class="task-card" onclick="toggleTask(this)">
-              <div class="task-num">02</div>
-              <div class="task-title">كبّر النص</div>
-              <div class="task-desc">دور على <code>font-size</code> جوه <code>p</code> وغيّره لـ 20px</div>
-            </div>
-            <div class="task-card" onclick="toggleTask(this)">
-              <div class="task-num">03</div>
-              <div class="task-title">دوّر الزوايا</div>
-              <div class="task-desc">دور على <code>border-radius</code> جوه <code>.card</code> وغيّره لـ 20px</div>
-            </div>
-            <div class="task-card" onclick="toggleTask(this)">
-              <div class="task-num">04</div>
-              <div class="task-title">غيّر لون الزر</div>
-              <div class="task-desc">دور على <code>background-color</code> جوه <code>.btn</code> وغيّر اللون</div>
-            </div>
+        <div class="cheat-grid">
+          <div class="cheat-card">
+            <div class="cheat-cat">🎨 الألوان</div>
+            <div class="cheat-item"><span>لون النص</span><code>color:</code></div>
+            <div class="cheat-item"><span>الخلفية</span><code>background-color:</code></div>
+            <div class="cheat-item"><span>لون الإطار</span><code>border-color:</code></div>
           </div>
-
-          <div class="practice-code">
-            <div class="edit-hint">← انسخ الكود ده وافتحه في VS Code</div>
-<pre style="color:var(--muted); font-size:12.5px; line-height:1.75; direction:ltr; text-align:left;">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;style&gt;
-
-  <span style="color:#c4285c">body</span> {
-    <span style="color:#1a5fd4">font-family</span>: <span style="color:#0e8a5a">Arial, sans-serif</span>;
-    <span style="color:#1a5fd4">background</span>: <span style="color:#0e8a5a">#f5f5f5</span>;
-    <span style="color:#1a5fd4">padding</span>: <span style="color:#0e8a5a">40px</span>;
-  }
-
-  <span style="color:#c4285c">h1</span> {
-    <span style="color:#1a5fd4">color</span>: <span style="color:#0e8a5a">#1a73e8</span>;     <span style="color:#aaa">/* ← غيّر اللون هنا */</span>
-    <span style="color:#1a5fd4">font-size</span>: <span style="color:#0e8a5a">32px</span>;
-    <span style="color:#1a5fd4">text-align</span>: <span style="color:#0e8a5a">center</span>;
-  }
-
-  <span style="color:#c4285c">p</span> {
-    <span style="color:#1a5fd4">font-size</span>: <span style="color:#0e8a5a">15px</span>;    <span style="color:#aaa">/* ← كبّر الحجم هنا */</span>
-    <span style="color:#1a5fd4">color</span>: <span style="color:#0e8a5a">#444</span>;
-    <span style="color:#1a5fd4">line-height</span>: <span style="color:#0e8a5a">1.7</span>;
-  }
-
-  <span style="color:#c4285c">.card</span> {
-    <span style="color:#1a5fd4">background</span>: <span style="color:#0e8a5a">white</span>;
-    <span style="color:#1a5fd4">border</span>: <span style="color:#0e8a5a">1px solid #ddd</span>;
-    <span style="color:#1a5fd4">border-radius</span>: <span style="color:#0e8a5a">8px</span>;   <span style="color:#aaa">/* ← دوّر الزوايا */</span>
-    <span style="color:#1a5fd4">padding</span>: <span style="color:#0e8a5a">24px</span>;
-    <span style="color:#1a5fd4">max-width</span>: <span style="color:#0e8a5a">500px</span>;
-    <span style="color:#1a5fd4">margin</span>: <span style="color:#0e8a5a">0 auto</span>;
-  }
-
-  <span style="color:#c4285c">.btn</span> {
-    <span style="color:#1a5fd4">background-color</span>: <span style="color:#0e8a5a">#1a73e8</span>; <span style="color:#aaa">/* ← غيّر اللون */</span>
-    <span style="color:#1a5fd4">color</span>: <span style="color:#0e8a5a">white</span>;
-    <span style="color:#1a5fd4">padding</span>: <span style="color:#0e8a5a">10px 24px</span>;
-    <span style="color:#1a5fd4">border</span>: <span style="color:#0e8a5a">none</span>;
-    <span style="color:#1a5fd4">border-radius</span>: <span style="color:#0e8a5a">6px</span>;
-    <span style="color:#1a5fd4">cursor</span>: <span style="color:#0e8a5a">pointer</span>;
-  }
-
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-  &lt;div class="card"&gt;
-    &lt;h1&gt;مرحباً بالعالم&lt;/h1&gt;
-    &lt;p&gt;ده نص تجريبي. جرّب تغيّر الحجم واللون.&lt;/p&gt;
-    &lt;button class="btn"&gt;اضغط هنا&lt;/button&gt;
-  &lt;/div&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+          <div class="cheat-card">
+            <div class="cheat-cat">📐 الحجم</div>
+            <div class="cheat-item"><span>حجم النص</span><code>font-size:</code></div>
+            <div class="cheat-item"><span>العرض</span><code>width:</code></div>
+            <div class="cheat-item"><span>الارتفاع</span><code>height:</code></div>
+            <div class="cheat-item"><span>حد أقصى</span><code>max-width:</code></div>
+          </div>
+          <div class="cheat-card">
+            <div class="cheat-cat">📏 المسافات</div>
+            <div class="cheat-item"><span>جوّاني</span><code>padding:</code></div>
+            <div class="cheat-item"><span>برّاني</span><code>margin:</code></div>
+            <div class="cheat-item"><span>توسيط</span><code>margin: 0 auto</code></div>
+            <div class="cheat-item"><span>بين عناصر</span><code>gap:</code></div>
+          </div>
+          <div class="cheat-card">
+            <div class="cheat-cat">✍️ النص</div>
+            <div class="cheat-item"><span>نوع الخط</span><code>font-family:</code></div>
+            <div class="cheat-item"><span>السُمك</span><code>font-weight:</code></div>
+            <div class="cheat-item"><span>المحاذاة</span><code>text-align:</code></div>
+            <div class="cheat-item"><span>زينة</span><code>text-decoration:</code></div>
+          </div>
+          <div class="cheat-card">
+            <div class="cheat-cat">🔲 الإطار</div>
+            <div class="cheat-item"><span>الإطار</span><code>border:</code></div>
+            <div class="cheat-item"><span>الزوايا</span><code>border-radius:</code></div>
+            <div class="cheat-item"><span>الظل</span><code>box-shadow:</code></div>
+          </div>
+          <div class="cheat-card">
+            <div class="cheat-cat">📦 الترتيب</div>
+            <div class="cheat-item"><span>Flex</span><code>display: flex</code></div>
+            <div class="cheat-item"><span>Grid</span><code>display: grid</code></div>
+            <div class="cheat-item"><span>إخفاء</span><code>display: none</code></div>
+            <div class="cheat-item"><span>متغيرات</span><code>--var: value</code></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ===================================================
-         SLIDE 12 — FINAL
-         =================================================== -->
-    <div class="slide" data-theme="plum" data-idx="12">
-      <div class="chapter-num">END</div>
-      <div class="slide-title" style="font-size:clamp(32px,5vw,62px);">خلاصة المرجع</div>
-      <div class="slide-sub">الحاجات اللي محتاجها 95% من الوقت</div>
+    <!-- ======================================================
+         17 — FINAL
+         ====================================================== -->
+    <div class="slide" data-theme="plum" data-idx="17">
+      <div class="chapter-num">✓</div>
+      <div class="slide-title" style="font-size:clamp(28px,4.5vw,58px);">خلصت المرجع!</div>
+      <div class="slide-sub">دلوقتي عارف تقرأ وتعدّل في أي كود HTML/CSS</div>
 
       <div class="stats-row" style="max-width:700px;">
-        <div class="stat-card">
-          <div class="stat-num" data-target="3">0</div>
-          <div class="stat-label">خصائص للألوان</div>
-          <div class="prog-bar-wrap"><div class="prog-bar" data-width="100"></div></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" data-target="5">0</div>
-          <div class="stat-label">خصائص للحجم</div>
-          <div class="prog-bar-wrap"><div class="prog-bar" data-width="100"></div></div>
-        </div>
         <div class="stat-card">
           <div class="stat-num" data-target="9">0</div>
           <div class="stat-label">دروس كاملة</div>
           <div class="prog-bar-wrap"><div class="prog-bar" data-width="100"></div></div>
         </div>
         <div class="stat-card">
-          <div class="stat-num" data-target="4">0</div>
-          <div class="stat-label">مهام تطبيقية</div>
+          <div class="stat-num" data-target="5">0</div>
+          <div class="stat-label">Live Editors</div>
+          <div class="prog-bar-wrap"><div class="prog-bar" data-width="100"></div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="30">0</div>
+          <div class="stat-label">خاصية تعلمتها</div>
+          <div class="prog-bar-wrap"><div class="prog-bar" data-width="100"></div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="2">0</div>
+          <div class="stat-label">اختبارات عدّيتهم</div>
           <div class="prog-bar-wrap"><div class="prog-bar" data-width="100"></div></div>
         </div>
       </div>
 
       <div class="list-rows" style="max-width:640px; margin-top:10px;">
-        <div class="list-row">
-          <div class="row-num">✓</div>
-          <div class="row-main"><div class="row-title">لو عايز تغير لون — دور على color: أو background-color:</div></div>
-        </div>
-        <div class="list-row">
-          <div class="row-num">✓</div>
-          <div class="row-main"><div class="row-title">لو عايز تغير حجم — دور على font-size: أو width:</div></div>
-        </div>
-        <div class="list-row">
-          <div class="row-num">✓</div>
-          <div class="row-main"><div class="row-title">لو مش لاقي — F12 في المتصفح أو Ctrl+F في VS Code</div></div>
-        </div>
-        <div class="list-row">
-          <div class="row-num">✓</div>
-          <div class="row-main"><div class="row-title">الـ .class في CSS = class="..." في HTML دايماً</div></div>
-        </div>
+        <div class="list-row"><div class="row-num">✓</div><div class="row-main"><div class="row-title">لو عايز تغير لون — color: أو background-color:</div></div></div>
+        <div class="list-row"><div class="row-num">✓</div><div class="row-main"><div class="row-title">لو عايز تغير حجم — font-size: أو width:</div></div></div>
+        <div class="list-row"><div class="row-num">✓</div><div class="row-main"><div class="row-title">الـ .class في CSS = class="..." في HTML دايماً</div></div></div>
+        <div class="list-row"><div class="row-num">✓</div><div class="row-main"><div class="row-title">لو مش بيتطبق — في selector أقوى بيكتب فوقه (Specificity)</div></div></div>
+        <div class="list-row"><div class="row-num">✓</div><div class="row-main"><div class="row-title">F12 في المتصفح = أقوى أداة عندك</div></div></div>
       </div>
     </div>
 
@@ -1675,19 +1737,24 @@ code {
 
 <!-- NAV -->
 <div class="nav-bar">
-  <button class="nav-btn" id="prevBtn" onclick="navigate(-1)">←</button>
+  <button class="nav-btn" onclick="navigate(-1)">←</button>
   <div class="dots" id="dotsWrap"></div>
-  <button class="nav-btn" id="nextBtn" onclick="navigate(1)">→</button>
-  <div class="slide-counter" id="counter">1 / 13</div>
+  <button class="nav-btn" onclick="navigate(1)">→</button>
+  <div class="slide-counter" id="counter">1 / 18</div>
 </div>
 
 <script>
 /* ============================================================
-   PRESENTATION ENGINE
+   DEFAULT CODES — for reset
    ============================================================ */
-const slides = document.querySelectorAll('.slide');
-const total  = slides.length;
-let current  = 0;
+const defaultCodes = {};
+
+/* ============================================================
+   ENGINE
+   ============================================================ */
+const slides  = document.querySelectorAll('.slide');
+const total   = slides.length;
+let current   = 0;
 let animating = false;
 
 /* Build dots */
@@ -1699,23 +1766,27 @@ slides.forEach((_,i) => {
   dotsWrap.appendChild(d);
 });
 
-function goToSlide(idx, direction) {
+/* Save default codes */
+document.querySelectorAll('.code-editor').forEach(ta => {
+  defaultCodes[ta.id] = ta.value;
+});
+
+function goToSlide(idx) {
   if (idx === current || animating) return;
   animating = true;
   const prev = slides[current];
   const next = slides[idx];
   const theme = next.dataset.theme || 'blue';
 
-  /* Exit current */
   prev.classList.remove('active');
   prev.classList.add('exit-up');
   setTimeout(() => { prev.classList.remove('exit-up'); }, 500);
 
-  /* Enter next */
   setTimeout(() => {
     next.classList.add('active');
     animating = false;
     runAnimations(next);
+    initEditors(next);
   }, 200);
 
   current = idx;
@@ -1723,18 +1794,16 @@ function goToSlide(idx, direction) {
 }
 
 function navigate(dir) {
-  const next = current + dir;
-  if (next < 0 || next >= total) return;
-  goToSlide(next, dir);
+  const n = current + dir;
+  if (n < 0 || n >= total) return;
+  goToSlide(n);
 }
 
 function updateUI(theme) {
-  /* Apply theme to pres */
   const pres = document.getElementById('pres');
   pres.dataset.theme = theme;
 
-  /* Background */
-  const bg = getComputedStyle(pres);
+  const bg  = getComputedStyle(pres);
   const from = bg.getPropertyValue('--bg-from').trim();
   const to   = bg.getPropertyValue('--bg-to').trim();
   const glow = bg.getPropertyValue('--glow').trim();
@@ -1742,37 +1811,32 @@ function updateUI(theme) {
 
   document.getElementById('presBg').style.background =
     `radial-gradient(ellipse at 20% 30%, ${to} 0%, ${from} 70%)`;
-  document.getElementById('presOrb').style.background = glow.replace('rgba','rgb').replace(/,[^,]+\)/, ')');
+  document.getElementById('presOrb').style.background =
+    glow.replace('rgba','rgb').replace(/,[^,]+\)/,')');
 
-  /* Dots */
   document.querySelectorAll('.dot').forEach((d,i) => {
     d.classList.toggle('active', i === current);
-    if (i === current) d.style.background = acc;
-    else d.style.background = '';
+    d.style.background = (i === current) ? acc : '';
   });
 
-  /* Progress stripe */
-  const pct = ((current) / (total-1) * 100).toFixed(1);
+  const pct = (current / (total-1) * 100).toFixed(1);
   const stripe = document.getElementById('progStripe');
-  stripe.style.width = pct + '%';
+  stripe.style.width   = pct + '%';
   stripe.style.background = acc;
-  stripe.style.boxShadow = `0 0 12px ${glow}`;
+  stripe.style.boxShadow  = `0 0 12px ${glow}`;
 
-  /* Counter */
   document.getElementById('counter').textContent = (current+1) + ' / ' + total;
 }
 
 /* ============================================================
-   ANIMATIONS — count-up + progress bars
+   ANIMATIONS
    ============================================================ */
 function runAnimations(slide) {
-  /* Count-up numbers */
   slide.querySelectorAll('.stat-num[data-target]').forEach(el => {
     const target = parseInt(el.dataset.target);
-    const dur = 1000;
-    const start = performance.now();
+    const start  = performance.now();
     function tick(now) {
-      const t = Math.min((now - start) / dur, 1);
+      const t    = Math.min((now - start) / 1000, 1);
       const ease = 1 - Math.pow(1-t, 3);
       el.textContent = Math.round(ease * target);
       if (t < 1) requestAnimationFrame(tick);
@@ -1781,25 +1845,80 @@ function runAnimations(slide) {
     setTimeout(() => requestAnimationFrame(tick), 300);
   });
 
-  /* Progress bars */
   slide.querySelectorAll('.prog-bar[data-width]').forEach(bar => {
-    setTimeout(() => {
-      bar.style.width = bar.dataset.width + '%';
-    }, 400);
+    setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 400);
+  });
+
+  /* real-world boxes */
+  slide.querySelectorAll('.real-world').forEach(el => {
+    el.style.animation = 'fadeUp 0.5s 0.5s forwards';
   });
 }
 
 /* ============================================================
-   TASK TOGGLE
+   LIVE EDITORS
    ============================================================ */
-function toggleTask(el) {
+function initEditors(slide) {
+  slide.querySelectorAll('.code-editor').forEach(ta => {
+    const id = ta.id.replace('code-','');
+    updatePreview(id);
+  });
+}
+
+function updatePreview(id) {
+  const ta = document.getElementById('code-' + id);
+  const iframe = document.getElementById('preview-' + id);
+  if (!ta || !iframe) return;
+  const doc = iframe.contentDocument || iframe.contentWindow.document;
+  doc.open();
+  doc.write(ta.value);
+  doc.close();
+}
+
+function resetCode(id) {
+  const ta = document.getElementById('code-' + id);
+  if (!ta) return;
+  ta.value = defaultCodes['code-' + id];
+  updatePreview(id);
+}
+
+/* ============================================================
+   TASK CHIPS
+   ============================================================ */
+function markTask(el) {
   el.classList.toggle('done');
+}
+
+/* ============================================================
+   QUIZ
+   ============================================================ */
+function answer(el, result, qid) {
+  const wrap = document.getElementById(qid + '-wrap');
+  if (wrap.dataset.answered) return;
+  wrap.dataset.answered = '1';
+
+  const opts = wrap.querySelectorAll('.quiz-opt');
+  opts.forEach(o => { o.style.pointerEvents = 'none'; });
+  el.classList.add(result);
+  el.querySelector('.opt-icon').textContent = result === 'correct' ? '✅' : '❌';
+
+  document.getElementById(qid + '-' + (result === 'correct' ? 'ok' : 'no')).classList.add('show');
+
+  if (qid === 'q1') {
+    setTimeout(() => {
+      document.getElementById('q2-wrap').style.display = 'block';
+    }, 800);
+  }
 }
 
 /* ============================================================
    KEYBOARD + SWIPE
    ============================================================ */
 document.addEventListener('keydown', e => {
+  const active = document.querySelector('.slide.active');
+  const isEditor = active && active.classList.contains('editor-slide');
+  if (isEditor && document.activeElement.tagName === 'TEXTAREA') return;
+
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') navigate(1);
   if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   navigate(-1);
   if (e.key === 'Home') goToSlide(0);
@@ -1810,30 +1929,27 @@ let touchX = 0;
 document.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, {passive:true});
 document.addEventListener('touchend', e => {
   const dx = e.changedTouches[0].clientX - touchX;
-  if (Math.abs(dx) > 50) navigate(dx < 0 ? 1 : -1);
+  if (Math.abs(dx) > 60) navigate(dx < 0 ? 1 : -1);
 });
 
 /* ============================================================
-   INIT — first slide
+   INIT
    ============================================================ */
 (function init() {
   const pres = document.getElementById('pres');
   pres.dataset.theme = slides[0].dataset.theme || 'blue';
-
-  const bg = getComputedStyle(pres);
+  const bg  = getComputedStyle(pres);
   const from = bg.getPropertyValue('--bg-from').trim();
   const to   = bg.getPropertyValue('--bg-to').trim();
   document.getElementById('presBg').style.background =
     `radial-gradient(ellipse at 20% 30%, ${to} 0%, ${from} 70%)`;
-
   const acc = bg.getPropertyValue('--accent').trim();
   document.querySelector('.dot').style.background = acc;
   document.getElementById('progStripe').style.background = acc;
   document.getElementById('progStripe').style.width = '0%';
   document.getElementById('counter').textContent = '1 / ' + total;
-
   slides[0].classList.add('active');
-  setTimeout(() => runAnimations(slides[0]), 200);
+  setTimeout(() => { runAnimations(slides[0]); initEditors(slides[0]); }, 200);
 })();
 </script>
 </body>
